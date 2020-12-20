@@ -1,1 +1,2 @@
-# CarolineTchong_3_20122020
+OpenClassrooms - DW - Projet 3
+Dynamisez une page web avec des animations CSS
