@@ -1,0 +1,276 @@
+/* Définition des polices */
+@font-face {
+    font-family: 'Shrikhand';
+    src: url('Font/Shrikhand-Regular.ttf') format('truetype')
+  }
+@font-face {
+    font-family: 'Roboto';
+    src: url('Font/Roboto-Regular.ttf') format('truetype')
+  }
+  @font-face {
+    font-family: 'Roboto-Bold';
+    src: url('Font/Roboto-Bold.ttf') format('truetype')
+  }
+#container {
+    width: 100%;
+    max-width: 500px;
+    font-family: 'Roboto';
+    margin: 0 auto !IMPORTANT;
+    font-size: 16px;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+/* Concaténation */
+
+a {text-decoration: none;}
+
+h1, h2{font-size: 22px;}
+
+figure{box-shadow: 1px 2px 8px #e7e7e7;}
+
+
+/* HEADER */
+
+header{
+    margin: 0 auto;
+    padding: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+      /* LOGO */
+
+#logo{
+    width: 50%;
+    height: 10%;
+    padding: 20px 0 10px 0;
+    margin: 0 auto;
+}
+      /* LIEU */
+
+header #lieu{
+  display: flex;
+  flex-direction: row;
+  background-color: #eaeaea;
+  justify-content: center;
+  align-items: center;
+  padding-right: 12%;
+  border-top: 3px #d5d5d5 solid;
+  border-bottom: 2px white solid;
+}
+header #lieu img{
+  width: 40%;
+}
+
+      /* CADRE RESERVER */
+
+
+#reserver{
+  background-color: #f6f6f6;
+}
+#reserver h1{
+  font-family: 'Roboto-Bold';
+  font-weight: 900;
+  padding: 10px 40px 0 40px;
+}
+#reserver p{
+  color: #414141;
+}
+#reserver button{
+  margin: 20px 0 50px 0;
+  padding: 15px;
+  border: 0;
+  border-radius: 25px;
+  background: linear-gradient(.49turn, #FF79DA, 50%,#9356DC);
+  color: white;
+  font-weight: 540;
+  box-shadow: 1px 2px 8px #afadad;
+}
+
+/* NAV */
+
+nav{
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+h2{
+  padding-left: 5%;
+  font-weight: 900;
+}
+nav figure{
+  width: 90%;
+  margin: 20px;
+  padding: 5px 0;
+  display: flex;
+  flex-direction: row;
+  background-color: #f6f6f6;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+nav figure:hover{
+  background-color: #f5edff;
+}
+.icones{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rond{
+  width: 23px;
+  height: 23px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  right: 10px;
+}
+nav figure .fas{
+  color: #8d8d8d;
+  margin: 0 25px 0 10px;
+}
+nav figure #mobile{
+  margin-right: 30px;
+  font-size: 18px;
+}
+
+nav figure #list{
+  font-size: 16px;
+}
+nav figure p{
+  font-family: 'Roboto-Bold';
+  font-size: 15px;
+  text-align: left;
+  color: black;
+}
+
+/* MAIN */
+
+main{
+  background-color: #f6f6f6;
+  margin-top: 40px;
+  padding: 15px 0 30px 0;
+}
+section{
+  width: 100%;
+}
+#resto{
+    width: 90%;
+}
+section figure{
+  width: 100%;
+  height: 215px;
+  background-color: white;
+  border-radius: 15px;
+  margin: 15px;
+}
+main figure img{
+  width: 100%;
+  height: 150px;
+  border-radius: 15px 15px 0 0;
+}
+      /* Ajustement des photos */
+#resto figure #gout{
+  object-fit: cover;
+  object-position: 0px -40px;
+}
+#resto figure #note{
+  object-fit: cover;
+  object-position: 0px -130px;
+}
+#resto figure #french, #resto figure #sens{
+  object-fit: cover;
+  object-position: 0px -48px;
+}
+      /* Positionnement de Nouveau */
+.new{
+  width: 30%;
+  position: relative;
+  bottom: 155px;
+  left: 190px;
+  color: #008766;
+  padding: 5px 0;
+  background-color: #99e2d0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bolder;
+  border-radius: 5%;
+}
+     /* Figcaption */
+#resto .sans figcaption{
+  position: relative;
+  bottom: 5px;
+}
+#resto figure figcaption{
+  position: relative;
+  bottom: 40px;
+}
+#resto figure figcaption h3{
+  font-size: 16px;
+  margin: 10px 0 0 15px;
+}
+#resto figure figcaption p{
+  margin: 5px 0 0 15px;
+}
+      /* Coeur à retravailler */
+#resto figure figcaption .far{
+  position: relative;
+  bottom: 38px;
+  left: 250px;
+  font-size: 20px;
+}
+#resto figure figcaption .far:hover{
+  display: none;
+}
+#resto figure figcaption .fas{
+  display: none;
+}
+#resto figure figcaption .fas:hover{
+  display: block;
+  position: relative;
+  bottom: 40px;
+  left: 250px;
+  font-size: 20px;
+}
+#resto figure figcaption .fas:hover{
+  font: linear-gradient(.49turn, #FF79DA, 50%,#9356DC);
+}
+
+/* FOOTER */
+
+footer{
+  background-color: #353535;
+  padding: 5px 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+}
+footer h4{
+  color: white;
+  font-family: 'Shrikhand';
+  font-size: 18px;
+  font-weight: 100;
+  margin: 15px 0 10px 0;
+}
+footer i{
+  margin-right: 5px;
+}
+#fork, #hands{margin: 5px;}
+footer #hands .fas{
+  font-size: 10px;
+}
+footer a{
+  font-size: 14px;
+  color: white;
+  margin: 5px;
+}
