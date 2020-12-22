@@ -86,7 +86,7 @@ header #lieu img{
   border-radius: 25px;
   background: linear-gradient(.49turn, #FF79DA, 50%,#9356DC);
   color: white;
-  font-weight: 540;
+  font-weight: 600;
   box-shadow: 1px 2px 8px #afadad;
 }
 
@@ -222,27 +222,25 @@ main figure img{
   margin: 5px 0 0 15px;
 }
       /* Coeur à retravailler */
-#resto figure figcaption .far{
+#resto figure figcaption a .far{
   position: relative;
   bottom: 38px;
   left: 250px;
   font-size: 20px;
 }
-#resto figure figcaption .far:hover{
-  display: none;
+#resto figure figcaption a .far:hover{
+  display: hide;
 }
-#resto figure figcaption .fas{
-  display: none;
-}
-#resto figure figcaption .fas:hover{
-  display: block;
+#resto figure figcaption a .fas{
+  display: hide;
   position: relative;
-  bottom: 40px;
-  left: 250px;
+  bottom: 38px;
+  left: 227px;
   font-size: 20px;
 }
-#resto figure figcaption .fas:hover{
-  font: linear-gradient(.49turn, #FF79DA, 50%,#9356DC);
+#resto figure figcaption a .fas:hover{
+  display: block;
+  backface-visibility: linear-gradient(top bottom, #FF79DA, #9356DC);
 }
 
 /* FOOTER */
