@@ -1,0 +1,230 @@
+
+/* Définition des polices */
+@font-face {
+  font-family: 'Shrikhand';
+  src: url('Font/Shrikhand-Regular.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('Font/Roboto-Regular.ttf') format('truetype')
+}
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('Font/Roboto-Bold.ttf') format('truetype')
+}
+/* Concaténation */
+
+h2{
+  text-transform: uppercase;
+  color: black;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+a {text-decoration: none;}
+p {color: black;}
+
+body{
+  margin:0;
+  padding: 0;
+}
+#container {
+  width: 100%;
+  max-width: 500px;
+  font-family: 'Roboto';
+  margin: 0 auto !IMPORTANT;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* HEADER */
+
+header{
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+#top{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#top .fas{
+  font-size: 22px;
+  color: black;
+  padding-left: 20px;
+}
+    /* LOGO */
+
+#logo{
+  width: 50%;
+  height: 50%;
+  padding: 20px 0 10px 0;
+  margin: 0 auto;
+}
+#contenu{
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* MAIN */
+
+main{
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+      /* Img */
+
+#pic{
+  width: 100%;
+}
+      /* MenuTop : résoudre le soucis de la supperposition*/
+
+#menuTop{
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  background-color: #f6f6f6;
+  padding: 15px 15px 0px 15px;
+  border-radius: 40px 40px 0 0;
+  position: absolute;
+  top: 38%;
+}
+h1{
+  font-family: 'shrikhand'
+}
+#menuTop .far{
+  font-size: 30px;
+  padding-right: 40px;
+}
+/* SECTIONS */
+
+#menu{
+  width: 100%;
+  background-color: #f6f6f6;
+  padding: 15px 15px 60px 15px;
+  margin: 0;
+}
+section{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+#border{
+  width: 40px;
+  border-top: 3px #99E2D0 solid ;
+}
+    /* FIGURES */
+
+figure{
+  width: 100%;
+  height: 70px;
+  box-shadow: 1px 2px 8px #e7e7e7;
+  display: flex;
+  align-items: baseline;
+  background-color: white;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+figure a{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+figure p{
+  padding-left: 5px;
+}
+.titre{
+  font-size: 16px;
+  font-weight: 800;
+  color: black;
+  margin: 8px 0 0 5px;
+}
+.description{
+  margin: 5px;
+  font-size: 14px;
+}
+.prix{
+  width: 5%;
+  position: relative;
+  bottom: 35px;
+  left: 370px;
+  font-size: 15px;
+  font-weight: bolder;
+}
+      /* FIGCAPTION */
+
+figcaption:hover{
+  width: 60px;
+  height: 70px;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+}
+.check{
+  position: relative;
+
+  color: white;
+}
+figure .check:hover{
+  right: 2em;
+  padding: 0 10px 0 30px;
+}
+      /* BUTTON */
+
+button{
+  margin-top: 30px;
+  padding: 15px 40px;
+  border: 0;
+  border-radius: 25px;
+  background: linear-gradient(.49turn, #FF79DA, 35%,#9356DC);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 1px 2px 8px #afadad;
+}
+/* FOOTER */
+
+footer{
+  width: 100%;
+  background-color: #353535;
+  padding: 5px 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+}
+footer h3{
+  color: white;
+  font-family: 'Shrikhand';
+  font-size: 18px;
+  font-weight: 100;
+  margin: 15px 0 10px 0;
+}
+footer i{
+  margin-right: 5px;
+}
+#fork, #hands{margin: 5px;}
+footer #hands .fas{
+  font-size: 10px;
+}
+footer a{
+  font-size: 14px;
+  color: white;
+  margin: 5px;
+}
