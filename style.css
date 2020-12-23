@@ -7,7 +7,7 @@
     font-family: 'Roboto';
     src: url('Font/Roboto-Regular.ttf') format('truetype')
   }
-  @font-face {
+@font-face {
     font-family: 'Roboto-Bold';
     src: url('Font/Roboto-Bold.ttf') format('truetype')
   }
@@ -17,6 +17,7 @@
     font-family: 'Roboto';
     margin: 0 auto !IMPORTANT;
     font-size: 16px;
+    background-color: #f6f6f6;
 }
 body{
     margin: 0;
@@ -25,8 +26,8 @@ body{
 /* Concaténation */
 
 a {text-decoration: none;}
-
-h1, h2{font-size: 22px;}
+p{color: black;}
+h1, h2{font-size: 20px;}
 
 figure{box-shadow: 1px 2px 8px #e7e7e7;}
 
@@ -34,53 +35,66 @@ figure{box-shadow: 1px 2px 8px #e7e7e7;}
 /* HEADER */
 
 header{
-    margin: 0 auto;
-    padding: 0 0 20px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background-color: white;
 }
-      /* LOGO */
-
+       /* LOGO */
+  
 #logo{
-    width: 50%;
-    height: 10%;
+    width: 45%;
+    height: 40%;
     padding: 20px 0 10px 0;
     margin: 0 auto;
 }
+/* ENTREPRISE */
+
+#entreprise{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
       /* LIEU */
 
-header #lieu{
+#lieu{
   display: flex;
-  flex-direction: row;
   background-color: #eaeaea;
   justify-content: center;
   align-items: center;
   padding-right: 12%;
   border-top: 3px #d5d5d5 solid;
   border-bottom: 2px white solid;
+  text-align: center;
 }
-header #lieu img{
-  width: 40%;
+#lieu a{width: 10%;}
+#lieu img{width: 70%;
 }
-
       /* CADRE RESERVER */
 
-
-#reserver{
+      #reserver{
+  text-align: center;
   background-color: #f6f6f6;
+  padding-top: 30px;
 }
 #reserver h1{
+  width: 80%;
   font-family: 'Roboto-Bold';
   font-weight: 900;
-  padding: 10px 40px 0 40px;
+  padding: 0;
+  margin: 0 auto;
 }
 #reserver p{
   color: #414141;
 }
-#reserver button{
-  margin: 20px 0 50px 0;
+button{
+  margin: 10px 0 20px 0;
   padding: 15px;
   border: 0;
   border-radius: 25px;
@@ -95,10 +109,11 @@ header #lieu img{
 nav{
   align-items: flex-start;
   justify-content: center;
-  margin-bottom: 40px;
+  padding-bottom: 30px;
+  background-color: white;
 }
 h2{
-  padding-left: 5%;
+  padding: 5%;
   font-weight: 900;
 }
 nav figure{
@@ -113,7 +128,7 @@ nav figure{
   justify-content: flex-start;
 }
 nav figure:hover{
-  background-color: #f5edff;
+  background-color: rgba(147,86,220,0.1);
 }
 .icones{
   display: flex;
@@ -157,7 +172,6 @@ nav figure p{
 
 main{
   background-color: #f6f6f6;
-  margin-top: 40px;
   padding: 15px 0 30px 0;
 }
 section{
@@ -271,4 +285,107 @@ footer a{
   font-size: 14px;
   color: white;
   margin: 5px;
+}
+
+
+/********* CSS MENUS *********/
+
+/* FLECHE */
+
+
+header .fas{
+  font-size: 18px;
+  position: relative;
+  left: 20px;
+  color: black;
+}
+
+/*IMG*/
+#pictop{
+margin: 0;
+}
+figure #pic{
+  max-width: 320px;
+  height: auto;
+}
+
+/* MENU */
+
+#menu{
+}
+#menuTop{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+#menuTop h1{
+  font-family: 'Shrikhand';
+  font-weight: 500;
+}
+#mainMenu{
+  background-color: #f6f6f6;
+  padding: 15px 0 0 0;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  position: relative;
+  top: -44px;
+}
+section h2{
+  padding-bottom: 0;
+  margin-bottom: 5px;
+}
+#border{
+  width: 40px;
+  border-top: 3px #99e2d0 solid;
+  margin-left: 5%;
+}
+.secMenu h2{
+  font-size: 16px;
+}
+.plat{
+  max-width: 300px;
+  height: 55px;
+  border-radius: 10px;
+  background-color: white;
+  margin: 0 auto;
+}
+.plat a{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+.plat h3{
+  font-size: 14px;
+  margin: 10px 0 0 10px;
+  color: black;
+}
+.text{
+  width: 90%;
+}
+.plat .text p{
+  font-size: 12px;
+  margin: 5px 0 0 10px;
+}
+.prix{
+  margin: 0;
+}
+.prix p{
+  font-size: 12px;
+  margin: 30px 20px 0 0;
+  font-weight: bolder;
+}
+.vert:hover{
+  width: 50px;
+  height: 50px;
+  background-color: #99e2d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#bouton{
+  text-align: center;
+  margin: 30px 0 0 0;
 }
