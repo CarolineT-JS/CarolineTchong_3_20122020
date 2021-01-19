@@ -13,7 +13,6 @@
   }
 #container {
     width: 100%;
-    max-width: 500px;
     font-family: 'Roboto';
     margin: 0 auto !IMPORTANT;
     font-size: 16px;
@@ -98,7 +97,6 @@ header{
   padding: 0 20px;
 }
 button{
-  width: 60%;
   margin: 10px 0 20px 0;
   padding: 15px 40px;
   border: 0;
@@ -138,6 +136,7 @@ nav figure{
   border-radius: 15px;
   align-items: center;
   justify-content: flex-start;
+  z-index: 1;
 }
 nav figure:hover{
   background-color: rgba(147,86,220,0.1);
@@ -160,6 +159,7 @@ nav figure:hover{
   justify-content: center;
   position: relative;
   right: 10px;
+  z-index: 10;
 }
 nav figure .fas{
   color: #8d8d8d;
@@ -221,7 +221,7 @@ main figure img{
   width: 70px;
   position: relative;
   bottom: 73%;
-  left: 68%;
+  left: 70%;
   color: #008766;
   padding: 5px;
   background-color: #99e2d0;
@@ -264,7 +264,7 @@ main figure img{
   padding: 0;
 }
 #resto figure figcaption a:hover {
-  /*background: linear-gradient(#a276d8, rgba(255,255,255,0));*/
+  background: linear-gradient(#a276d8,50%,#ee91d5);
   color: #ee91d5;
   transform: translate(0,20px) ease ;
 }
@@ -299,16 +299,53 @@ footer a{
   margin: 5px;
 }
 
-/********* RESPONSIVE TABLET *********/
 
-@media screen and (min-width: 768px) and (max-width: 1400px)
+
+/********* RESPONSIVE TABLET Petit *********/
+
+@media screen and (min-width: 500px) and (max-width: 768px)
 {
-  /* Bouton nouveau */
-  .new{
-    width: 100px;
+  #container{
+    width: 60%;
+  }
+  section figure .new{
+    left: 70%;
+  }
+}
+
+
+/********* RESPONSIVE TABLET Large *********/
+
+@media screen and (min-width: 768px) and (max-width: 1200px)
+{
+  #container{
+    width: 60%;
+  }
+  /* Fonctionnement */
+  nav h2{
+    text-align: center;
+  }
+  #how{
+    width: 70%;
+    margin: 0 auto;
+  }
+  #how a{
+    margin: 0 !IMPORTANT;
+  }
+  /* Restaurants */
+  section figure{
+    height: auto;
     position: relative;
-    bottom: 70%;
-    left: 75%;
+  }
+  section figure img{
+    height: 200px;
+  }
+  /* Bouton nouveau */
+  section figure .new{
+    width: 90px;
+    position: absolute;
+    bottom: 80%;
+    left: 78%;
     color: #008766;
     padding: 5px 0;
     background-color: #99e2d0;
@@ -320,14 +357,91 @@ footer a{
   /* figcaption */
   #resto figure figcaption{
     height: 50px;
-    position: relative;
-    bottom: 40px;
+    bottom: 8px;
   }
 }
 
+/********* RESPONSIVE DESKTOP *********/
+
+@media screen and (min-width: 1200px)
+{
+  #container{
+    width: 70%;
+  }
+    /* TOP */
+  header{
+    width:80%;
+    margin: 0 auto;
+  }
+  #entreprise{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  #lieu img{
+    width: 25px;
+  }
+  #lieu p{
+    margin-left: 20px;
+    font-size: 1.2em;
+  }
+    /* Fonctionnement */
+  nav{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+  }
+  section figure .new{
+    left: 78%;
+  }
+  h2{
+    padding: 1%;
+    font-size: 1.6em;
+  }
+  #how {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #how a{
+    margin: 0 20px;
+  }
+    /* Restaurants */
+  section{
+    width: 100%;
+    margin: 0 auto;
+  }
+  section h2{
+    text-align: center;
+    padding-bottom: 2% !IMPORTANT;
+  }
+  #resto{
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  figure{
+    flex-basis: 40%;
+  }
+    /* Footer */
+  footer{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    font-size: 1em;
+    justify-content: space-around;
+    margin: 0 auto;
+    align-items: center;
+  }
 
 
-
+}
 
 /********* CSS MENUS *********/
 
@@ -389,7 +503,7 @@ section h2{
 .plat{
   width: 90%;
   height: 65px;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: white;
   margin: 0 auto;
 }
@@ -438,5 +552,3 @@ section h2{
   font-size: 1em;
 }
 
-
-/********* ANIMATIONS *********/
