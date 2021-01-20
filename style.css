@@ -110,9 +110,7 @@ button{
 button:hover {
   background: linear-gradient(.49turn, #ee91d5, 50%,#a276d8);
   box-shadow: 2px 3px 10px #8b8a8a;
-
 }
-
 
 /* NAV */
 
@@ -197,6 +195,8 @@ section figure{
   background-color: white;
   border-radius: 15px;
   margin: 15px;
+  display: flex;
+  flex-direction: column;
 }
 main figure img{
   width: 100%;
@@ -248,11 +248,9 @@ main figure img{
 #resto figure figcaption p{
   margin: 5px 0 0 15px;
 }
+
       /* Coeur à retravailler */
 
-#resto figure figcaption a{
-
-}
 #resto figure figcaption a{
   position: relative;
   bottom: 70%;
@@ -303,7 +301,7 @@ footer a{
 
 /********* RESPONSIVE TABLET Petit *********/
 
-@media screen and (min-width: 500px) and (max-width: 768px)
+/*@media screen and (min-width: 500px) and (max-width: 768px)
 {
   #container{
     width: 60%;
@@ -311,7 +309,7 @@ footer a{
   section figure .new{
     left: 70%;
   }
-}
+}*/
 
 
 /********* RESPONSIVE TABLET Large *********/
@@ -335,7 +333,6 @@ footer a{
   /* Restaurants */
   section figure{
     height: auto;
-    position: relative;
   }
   section figure img{
     height: 200px;
@@ -343,20 +340,23 @@ footer a{
   /* Bouton nouveau */
   section figure .new{
     width: 90px;
-    position: absolute;
-    bottom: 80%;
-    left: 78%;
+    margin-top: -40%;
+    margin-right: -40%;
     color: #008766;
     padding: 5px 0;
     background-color: #99e2d0;
     text-align: center;
-    font-size: 12px;
     font-weight: bolder;
     border-radius: 5%;
   }
   /* figcaption */
   #resto figure figcaption{
-    height: 50px;
+    margin-top: 45%;
+    height: 30px !IMPORTANT;
+    bottom: 58px;
+  }
+  #resto figure .sans{
+    height: 60px !IMPORTANT;
     bottom: 8px;
   }
 }
@@ -372,22 +372,24 @@ footer a{
   header{
     width:80%;
     margin: 0 auto;
+    padding: 10px 0 12px 0;
   }
   #entreprise{
     width: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    text-align: center;
+  }
+  #lieu{
+    padding: 0 20px 0 0;
   }
   #lieu img{
     width: 25px;
+    position: relative;
+    left: -40px;
   }
-  #lieu p{
-    margin-left: 20px;
-    font-size: 1.2em;
-  }
+  
     /* Fonctionnement */
   nav{
     width: 80%;
