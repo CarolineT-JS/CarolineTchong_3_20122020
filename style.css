@@ -59,13 +59,14 @@ header{
   margin: 0 auto;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   text-align: center;
 }
       /* LIEU */
 
 #lieu{
+  width: 100%;
   display: flex;
   background-color: #eaeaea;
   justify-content: center;
@@ -76,8 +77,8 @@ header{
   text-align: center;
 }
 #lieu a{width: 10%;}
-#lieu img{width: 70%;
-}
+#lieu img{width: 70%;}
+
       /* CADRE RESERVER */
 
 #reserver{
@@ -119,6 +120,8 @@ nav{
   justify-content: center;
   padding: 10px 0 30px 0;
   background-color: white;
+  margin: 0 auto;
+  text-align: center;
 }
 h2{
   padding: 5%;
@@ -185,22 +188,26 @@ main{
 }
 section{
   width: 100%;
+  margin: 0 auto;
+
 }
 #resto{
     width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 section figure{
   width: 100%;
-  height: 217px;
+  height: 200px;
   background-color: white;
   border-radius: 15px;
   margin: 15px;
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 main figure img{
   width: 100%;
-  height: 150px;
+  height: 120px;
   border-radius: 15px 15px 0 0;
 }
       /* Ajustement des photos */
@@ -219,29 +226,20 @@ main figure img{
       /* Positionnement de Nouveau */
 .new{
   width: 70px;
-  position: relative;
-  bottom: 73%;
-  left: 70%;
+  position: absolute;
+  right: 5%;
+  bottom: 75%;
   color: #008766;
+  background: #99e2d0;
   padding: 5px;
-  background-color: #99e2d0;
   text-align: center;
   font-size: 14px;
   font-weight: bolder;
   border-radius: 5%;
-}
+} 
+
      /* Figcaption */
 
-#resto .sans figcaption{
-  height: 50px;
-  position: relative;
-  bottom: 5px;
-}
-#resto figure figcaption{
-  height: 50px;
-  position: relative;
-  bottom: 50px;
-}
 #resto figure figcaption h3{
   margin: 10px 0 0 15px;
 }
@@ -298,20 +296,6 @@ footer a{
 }
 
 
-
-/********* RESPONSIVE TABLET Petit *********/
-
-/*@media screen and (min-width: 500px) and (max-width: 768px)
-{
-  #container{
-    width: 60%;
-  }
-  section figure .new{
-    left: 70%;
-  }
-}*/
-
-
 /********* RESPONSIVE TABLET Large *********/
 
 @media screen and (min-width: 768px) and (max-width: 1200px)
@@ -320,6 +304,7 @@ footer a{
     width: 60%;
   }
   /* Fonctionnement */
+  #lieu img{width: 50%;}
   nav h2{
     text-align: center;
   }
@@ -330,50 +315,14 @@ footer a{
   #how a{
     margin: 0 !IMPORTANT;
   }
-  /* Restaurants */
-  section figure{
-    height: auto;
-  }
-  section figure img{
-    height: 200px;
-  }
-  /* Bouton nouveau */
-  section figure .new{
-    width: 90px;
-    margin-top: -40%;
-    margin-right: -40%;
-    color: #008766;
-    padding: 5px 0;
-    background-color: #99e2d0;
-    text-align: center;
-    font-weight: bolder;
-    border-radius: 5%;
-  }
-  /* figcaption */
-  #resto figure figcaption{
-    margin-top: 45%;
-    height: 30px !IMPORTANT;
-    bottom: 58px;
-  }
-  #resto figure .sans{
-    height: 60px !IMPORTANT;
-    bottom: 8px;
-  }
 }
 
 /********* RESPONSIVE DESKTOP *********/
 
 @media screen and (min-width: 1200px)
 {
-  #container{
-    width: 70%;
-  }
+  #container{width: 70%;}
     /* TOP */
-  header{
-    width:80%;
-    margin: 0 auto;
-    padding: 10px 0 12px 0;
-  }
   #entreprise{
     width: 80%;
     display: flex;
@@ -381,25 +330,13 @@ footer a{
     justify-content: space-around;
     align-items: center;
   }
-  #lieu{
-    padding: 0 20px 0 0;
-  }
+  #lieu{width: 15%;}
   #lieu img{
     width: 25px;
     position: relative;
     left: -40px;
   }
-  
     /* Fonctionnement */
-  nav{
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 10px;
-  }
-  section figure .new{
-    left: 78%;
-  }
   h2{
     padding: 1%;
     font-size: 1.6em;
@@ -407,42 +344,26 @@ footer a{
   #how {
     width: 100%;
     display: flex;
-    justify-content: center;
-  }
-  #how a{
-    margin: 0 20px;
+    justify-content: space-between;
   }
     /* Restaurants */
-  section{
-    width: 100%;
-    margin: 0 auto;
-  }
   section h2{
     text-align: center;
     padding-bottom: 2% !IMPORTANT;
   }
   #resto{
     width: 100%;
-    display: flex;
-    margin: 0 auto;
-    flex-wrap: wrap;
     justify-content: center;
   }
-  figure{
-    flex-basis: 40%;
-  }
+  figure{flex-basis: 40%;}
     /* Footer */
   footer{
-    width: 80%;
     display: flex;
     flex-direction: row;
-    font-size: 1em;
     justify-content: space-around;
-    margin: 0 auto;
     align-items: center;
   }
-
-
+  footer a{font-size: 1em;}
 }
 
 /********* CSS MENUS *********/
