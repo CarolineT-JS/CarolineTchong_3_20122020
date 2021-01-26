@@ -344,7 +344,7 @@ footer a{
   #how {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
   }
     /* Restaurants */
   section h2{
