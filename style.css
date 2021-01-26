@@ -334,7 +334,7 @@ footer a{
   #lieu img{
     width: 25px;
     position: relative;
-    left: -40px;
+    left: -50px;
   }
     /* Fonctionnement */
   h2{
@@ -344,8 +344,9 @@ footer a{
   #how {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
   }
+  #how a{margin: 0 10px;}
     /* Restaurants */
   section h2{
     text-align: center;
