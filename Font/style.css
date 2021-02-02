@@ -11,21 +11,6 @@
     font-family: 'Roboto-Bold';
     src: url('Font/Roboto-Bold.ttf') format('truetype')
   }
- /* Loading Spinner */
-
-body #spinner{animation: hide 4000ms 4000ms ease-in infinite;}
-
-@keyframes hide {
-  0% {
-    display: block;
-  }
-  100% {
-    display: none;
-  }
-}
-
- /* Body */
-
 #container {
     width: 100%;
     font-family: 'Roboto';
@@ -58,16 +43,6 @@ header{
   align-items: center;
   text-align: center;
   background-color: white;
-  position: relative;
-}
-
-      /* Flèche */
-
-header .fas{
-  position: absolute;
-  top: 40%;
-  left: 5%;
-  font-size: 1.2em;
 }
        /* LOGO */
   
@@ -84,14 +59,13 @@ header .fas{
   margin: 0 auto;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
 }
       /* LIEU */
 
 #lieu{
-  width: 100%;
   display: flex;
   background-color: #eaeaea;
   justify-content: center;
@@ -102,8 +76,8 @@ header .fas{
   text-align: center;
 }
 #lieu a{width: 10%;}
-#lieu img{width: 70%;}
-
+#lieu img{width: 70%;
+}
       /* CADRE RESERVER */
 
 #reserver{
@@ -136,7 +110,9 @@ button{
 button:hover {
   background: linear-gradient(.49turn, #ee91d5, 50%,#a276d8);
   box-shadow: 2px 3px 10px #8b8a8a;
+
 }
+
 
 /* NAV */
 
@@ -145,8 +121,6 @@ nav{
   justify-content: center;
   padding: 10px 0 30px 0;
   background-color: white;
-  margin: 0 auto;
-  text-align: center;
 }
 h2{
   padding: 5%;
@@ -213,26 +187,20 @@ main{
 }
 section{
   width: 100%;
-  margin: 0 auto;
-
 }
 #resto{
     width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
 }
 section figure{
   width: 100%;
-  height: 200px;
+  height: 217px;
   background-color: white;
   border-radius: 15px;
   margin: 15px;
-  position: relative;
 }
 main figure img{
   width: 100%;
-  height: 120px;
+  height: 150px;
   border-radius: 15px 15px 0 0;
 }
       /* Ajustement des photos */
@@ -251,74 +219,54 @@ main figure img{
       /* Positionnement de Nouveau */
 .new{
   width: 70px;
-  position: absolute;
-  right: 5%;
-  bottom: 75%;
+  position: relative;
+  bottom: 73%;
+  left: 70%;
   color: #008766;
-  background: #99e2d0;
   padding: 5px;
+  background-color: #99e2d0;
   text-align: center;
   font-size: 14px;
   font-weight: bolder;
   border-radius: 5%;
-} 
-
+}
      /* Figcaption */
 
-#resto figure figcaption {
-  width: 100%;
+#resto .sans figcaption{
   height: 50px;
   position: relative;
+  bottom: 5px;
 }
-
+#resto figure figcaption{
+  height: 50px;
+  position: relative;
+  bottom: 50px;
+}
 #resto figure figcaption h3{
   margin: 10px 0 0 15px;
 }
 #resto figure figcaption p{
   margin: 5px 0 0 15px;
 }
-
       /* Coeur à retravailler */
 
-#resto figure figcaption .coeur{
-  position: absolute;
-  right: 5%;
-  top: 10%;
+#resto figure figcaption a{
+
 }
-.coeur i{
-  font-size: 1.4em;
-  font-weight: 100;
+#resto figure figcaption a{
+  position: relative;
+  bottom: 70%;
+  left: 85%;
+  font-size: 1.5em;
+  color: #a276d8;
+  transition: color 1s;
+  margin: 0;
+  padding: 0;
 }
-#resto figure figcaption .coeur .far {
-  display: block;
-  left: 20px;
-}
-#resto figure figcaption .coeur .fas{
-  color: #99e2d0;
-  
-}
-#resto figure figcaption .coeur .far:hover{
-  display: block;
-  animation: heart 1000ms ease-in-out 1;
-  transition: transform 1000ms ease-in-out;
-}
-@keyframes heart {
-  0% {
-    opacity: 0.5;
-    transform: scaleY(0);
-    transform-origin: bottom;
-    color: linear-gradient(#a276d8,50%,#ee91d5);
-  }
-  50% {
-    transform: scaleY(0.5);
-    transform-origin: bottom;
-    color: linear-gradient(#a276d8,50%,#ee91d5);
-  }
-  100% {
-    transform: scaleY(1);
-    transform-origin: bottom;
-    color: linear-gradient(#a276d8,50%,#ee91d5);
-  }
+#resto figure figcaption a:hover {
+  background: linear-gradient(#a276d8,50%,#ee91d5);
+  color: #ee91d5;
+  transform: translate(0,20px) ease ;
 }
 
 /* FOOTER */
@@ -352,6 +300,20 @@ footer a{
 }
 
 
+
+/********* RESPONSIVE TABLET Petit *********/
+
+@media screen and (min-width: 500px) and (max-width: 768px)
+{
+  #container{
+    width: 60%;
+  }
+  section figure .new{
+    left: 70%;
+  }
+}
+
+
 /********* RESPONSIVE TABLET Large *********/
 
 @media screen and (min-width: 768px) and (max-width: 1200px)
@@ -360,7 +322,6 @@ footer a{
     width: 60%;
   }
   /* Fonctionnement */
-  #lieu img{width: 50%;}
   nav h2{
     text-align: center;
   }
@@ -371,22 +332,32 @@ footer a{
   #how a{
     margin: 0 !IMPORTANT;
   }
-  #mainMenu{
-    animation: monte 3000ms ease-in-out 1;
+  /* Restaurants */
+  section figure{
+    height: auto;
+    position: relative;
   }
-  @keyframes monte {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20%);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  section figure img{
+    height: 200px;
   }
-  figure #pic{
-    max-height: 400px !IMPORTANT;
+  /* Bouton nouveau */
+  section figure .new{
+    width: 90px;
+    position: absolute;
+    bottom: 80%;
+    left: 78%;
+    color: #008766;
+    padding: 5px 0;
+    background-color: #99e2d0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bolder;
+    border-radius: 5%;
+  }
+  /* figcaption */
+  #resto figure figcaption{
+    height: 50px;
+    bottom: 8px;
   }
 }
 
@@ -394,22 +365,39 @@ footer a{
 
 @media screen and (min-width: 1200px)
 {
-  #container{width: 70%;}
+  #container{
+    width: 70%;
+  }
     /* TOP */
+  header{
+    width:80%;
+    margin: 0 auto;
+  }
   #entreprise{
     width: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    text-align: center;
   }
-  #lieu{width: 15%;}
   #lieu img{
     width: 25px;
-    position: relative;
-    left: -50px;
+  }
+  #lieu p{
+    margin-left: 20px;
+    font-size: 1.2em;
   }
     /* Fonctionnement */
+  nav{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+  }
+  section figure .new{
+    left: 78%;
+  }
   h2{
     padding: 1%;
     font-size: 1.6em;
@@ -419,28 +407,53 @@ footer a{
     display: flex;
     justify-content: center;
   }
-  #how a{margin: 0 20px;}
+  #how a{
+    margin: 0 20px;
+  }
     /* Restaurants */
+  section{
+    width: 100%;
+    margin: 0 auto;
+  }
   section h2{
     text-align: center;
     padding-bottom: 2% !IMPORTANT;
   }
   #resto{
     width: 100%;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
     justify-content: center;
   }
-  figure{flex-basis: 40%;}
+  figure{
+    flex-basis: 40%;
+  }
     /* Footer */
   footer{
+    width: 80%;
     display: flex;
     flex-direction: row;
+    font-size: 1em;
     justify-content: space-around;
+    margin: 0 auto;
     align-items: center;
   }
-  footer a{font-size: 1em;}
+
+
 }
 
 /********* CSS MENUS *********/
+
+/* FLECHE */
+
+
+header .fas{
+  font-size: 18px;
+  position: relative;
+  left: 20px;
+  color: black;
+}
 
 /*IMG*/
 #pictop{
@@ -448,12 +461,13 @@ margin: 0;
 }
 figure #pic{
   width: 100%;
-  max-height: 300px;
-  object-fit: cover;
+  height: auto;
 }
 
 /* MENU */
 
+#menu{
+}
 #menuTop{
   width: 80%;
   display: flex;
@@ -469,7 +483,6 @@ figure #pic{
   font-size: 1.2em;
 }
 #mainMenu{
-  width: 100%;
   background-color: #f6f6f6;
   padding: 15px 0 0 0;
   border-top-left-radius: 35px;
@@ -482,7 +495,7 @@ section h2{
   padding-bottom: 0;
   margin-bottom: 5px;
 }
-.border{
+#border{
   width: 40px;
   border-top: 3px #99e2d0 solid;
   margin-left: 5%;
@@ -529,9 +542,6 @@ section h2{
   justify-content: center;
   align-items: center;
 }
-.vert .fas{
-  color: white;
-}
 #bouton{
   margin: 30px 0 0 0;
   display: flex;
@@ -542,30 +552,3 @@ section h2{
   font-size: 1em;
 }
 
-
-/********* CSS MENUS DESKTOP *********/
-
-@media screen and (min-width: 1200px)
-{
-  .border{
-    margin: 0 auto;
-    width: 60px;
-  }
-  #mainMenu{
-    animation: monte 3000ms ease-in-out 1;
-  }
-  @keyframes monte {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-35%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  figure #pic{
-    max-height: 500px;
-  }
-}
