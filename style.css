@@ -11,7 +11,14 @@
     font-family: 'Roboto-Bold';
     src: url('Font/Roboto-Bold.ttf') format('truetype')
   }
- /* Loading Spinner */
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../webfonts/fa-regular-400.eot");
+  src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg"); }
+ 
+    /* Loading Spinner */
 
 body #spinner{animation: hide 4000ms 4000ms ease-in infinite;}
 
@@ -32,6 +39,8 @@ body #spinner{animation: hide 4000ms 4000ms ease-in infinite;}
     margin: 0 auto !IMPORTANT;
     font-size: 16px;
     background-color: #f6f6f6;
+    z-index: 2;
+    overflow: hidden;
 }
 body{
     margin: 0;
@@ -278,7 +287,7 @@ main figure img{
   margin: 5px 0 0 15px;
 }
 
-      /* Coeur à retravailler */
+      /* Coeur */
 
 #resto figure figcaption .coeur{
   position: absolute;
@@ -286,38 +295,36 @@ main figure img{
   top: 10%;
 }
 .coeur i{
-  font-size: 1.4em;
-  font-weight: 100;
+  font-size: 1.5em;
 }
 #resto figure figcaption .coeur .far {
   display: block;
   left: 20px;
 }
 #resto figure figcaption .coeur .fas{
-  color: #99e2d0;
-  
+  margin-top: -23px;
+  -webkit-text-fill-color: transparent;
 }
-#resto figure figcaption .coeur .far:hover{
+#resto figure figcaption .coeur .far:hover + .fas{
   display: block;
-  animation: heart 1000ms ease-in-out 1;
-  transition: transform 1000ms ease-in-out;
+  animation: heart 1500ms ease 1 both;
+  transform-origin: bottom;
+  cursor: pointer;
 }
 @keyframes heart {
   0% {
-    opacity: 0.5;
+    opacity: 0;
     transform: scaleY(0);
-    transform-origin: bottom;
-    color: linear-gradient(#a276d8,50%,#ee91d5);
-  }
-  50% {
-    transform: scaleY(0.5);
-    transform-origin: bottom;
-    color: linear-gradient(#a276d8,50%,#ee91d5);
+    background: linear-gradient(#9356DC,50%,#ee91d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   100% {
+    opacity: 1;
     transform: scaleY(1);
-    transform-origin: bottom;
-    color: linear-gradient(#a276d8,50%,#ee91d5);
+    background: linear-gradient(#9356DC,60%,#ee91d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
@@ -388,13 +395,21 @@ footer a{
   figure #pic{
     max-height: 400px !IMPORTANT;
   }
+  #menuTop h1{
+    font-size: 2em;
+  }
+  #menuTop i{
+    font-size: 1.5em !IMPORTANT;
+    right: -10% !IMPORTANT;
+    top: 40% !IMPORTANT;
+  }
 }
 
 /********* RESPONSIVE DESKTOP *********/
 
 @media screen and (min-width: 1200px)
 {
-  #container{width: 70%;}
+  #container{width: 70% !IMPORTANT;}
     /* TOP */
   #entreprise{
     width: 80%;
@@ -442,6 +457,9 @@ footer a{
 
 /********* CSS MENUS *********/
 
+#container{
+  width: 100%;
+}
 /*IMG*/
 #pictop{
 margin: 0;
@@ -458,8 +476,8 @@ figure #pic{
   width: 80%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-left: 20px;
+  position: relative;
 }
 #menuTop h1{
   font-family: 'Shrikhand';
@@ -467,6 +485,9 @@ figure #pic{
 }
 #menuTop i{
   font-size: 1.2em;
+  position: absolute;
+  right: -5%;
+  top: 35%;
 }
 #mainMenu{
   width: 100%;
@@ -487,19 +508,21 @@ section h2{
   border-top: 3px #99e2d0 solid;
   margin-left: 5%;
 }
-.plat{
+.cartouche{
   width: 90%;
+  height: 85px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 10px 20px;
+}
+.plat{
+  width: 70%;
   height: 65px;
   border-radius: 12px;
   background-color: white;
-  margin: 0 auto;
 }
-.plat a{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 15px 0;
-}
+
 .plat h3{
   margin: 10px 0 0 10px;
   color: black;
@@ -507,30 +530,44 @@ section h2{
 }
 .text{
   width: 90%;
-  overflow: s;
 }
 .plat .text p{
   margin: 5px 0 0 10px;
   font-size: 0.9em;
 }
+.push {
+  width: 130px;
+  height: 65px;
+  z-index: 11;
+  display: flex;
+  position: absolute;
+  right: 9%;
+  /*overflow: hidden;*/
+}
 .prix{
-  margin: 0;
+  margin-right: 33px ;
+  z-index: 10;
 }
 .prix p{
   font-size: 0.9em;
   margin: 30px 0 0 0;
   font-weight: bolder;
 }
-.vert:hover{
-  width: 50px;
-  height: 50px;
+.vert{
+  width: 65px;
+  height: 65px;
   background-color: #99e2d0;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0 12px 12px 0;
+  z-index: 10;
+  margin-right: -70px;
 }
+
 .vert .fas{
-  color: white;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
 }
 #bouton{
   margin: 30px 0 0 0;
@@ -542,6 +579,34 @@ section h2{
   font-size: 1em;
 }
 
+/* Animations hover */
+
+.plat:hover{
+  cursor: pointer;
+}
+.plat:hover + .push {
+  animation: verte 1000ms ease-in-out 1 both;
+}
+.plat:hover ~ .vert .fas {
+  animation: circle 500ms ease-in 1 both;
+}
+
+  @keyframes circle {
+    0%{
+      transform: rotateZ(0);
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+  @keyframes verte {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-66px);
+      }
+  }
 
 /********* CSS MENUS DESKTOP *********/
 
@@ -554,7 +619,15 @@ section h2{
   #mainMenu{
     animation: monte 3000ms ease-in-out 1;
   }
-  @keyframes monte {
+  #menuTop h1{
+    font-size: 2em;
+  }
+  #menuTop i{
+    font-size: 1.5em;
+    right: -11%;
+    top: 35%;
+  }
+  /*@keyframes monte {
     0% {
       transform: translateY(0);
     }
@@ -568,4 +641,4 @@ section h2{
   figure #pic{
     max-height: 500px;
   }
-}
+}*/
