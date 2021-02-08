@@ -11,25 +11,6 @@
     font-family: 'Roboto-Bold';
     src: url('Font/Roboto-Bold.ttf') format('truetype')
   }
-@font-face {
-  font-family: 'Font Awesome 5 Free';
-  font-style: normal;
-  font-weight: 400;
-  src: url("../webfonts/fa-regular-400.eot");
-  src: url("../webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.woff") format("woff"), url("../webfonts/fa-regular-400.ttf") format("truetype"), url("../webfonts/fa-regular-400.svg#fontawesome") format("svg"); }
- 
-    /* Loading Spinner */
-
-body #spinner{animation: hide 4000ms 4000ms ease-in infinite;}
-
-@keyframes hide {
-  0% {
-    display: block;
-  }
-  100% {
-    display: none;
-  }
-}
 
  /* Body */
 
@@ -41,7 +22,7 @@ body #spinner{animation: hide 4000ms 4000ms ease-in infinite;}
     background-color: #f6f6f6;
     z-index: 2;
     overflow: hidden;
-}
+  }
 body{
     margin: 0;
     padding: 0;
@@ -175,6 +156,7 @@ nav figure{
 }
 nav figure:hover{
   background-color: rgba(147,86,220,0.1);
+  box-shadow: 2px 3px 10px #8b8a8a;
 }
 .icones{
   display: flex;
@@ -293,38 +275,37 @@ main figure img{
   position: absolute;
   right: 5%;
   top: 10%;
+  cursor: pointer;
+
 }
 .coeur i{
   font-size: 1.5em;
 }
-#resto figure figcaption .coeur .far {
-  display: block;
+.vide {
   left: 20px;
+  opacity: 1;
+  z-index: 20;
 }
-#resto figure figcaption .coeur .fas{
-  margin-top: -23px;
+.plein{
+  position: absolute;
+  left: 0;
+  background: linear-gradient(#9356DC,50%,#ee91d5);
+  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  opacity: 0;
+  z-index: -1;
 }
-#resto figure figcaption .coeur .far:hover + .fas{
-  display: block;
+.vide:hover + .plein{
   animation: heart 1500ms ease 1 both;
-  transform-origin: bottom;
-  cursor: pointer;
+  z-index: 50;
 }
 @keyframes heart {
   0% {
     opacity: 0;
-    transform: scaleY(0);
-    background: linear-gradient(#9356DC,50%,#ee91d5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
   100% {
     opacity: 1;
-    transform: scaleY(1);
-    background: linear-gradient(#9356DC,60%,#ee91d5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 }
 
@@ -435,6 +416,7 @@ footer a{
     justify-content: center;
   }
   #how a{margin: 0 20px;}
+
     /* Restaurants */
   section h2{
     text-align: center;
