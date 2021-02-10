@@ -37,7 +37,7 @@
     background: rgba(255, 255, 255, 0.8);
     position: absolute;
     z-index: 1000;
-    animation: off 1000ms 3000ms ease-out 1 both;
+    animation: off 500ms 3000ms ease-out 1 both;
     position: fixed;
   }
   
@@ -50,18 +50,19 @@
     transform-origin: center center;
   }
 
-  /* Tentative d'enlever le scroll vertical */
-  
-  #spinner + body {
-    overflow-y: hidden;
+  /* Enlever le scroll vertical */
+ 
+  body{
+    animation: scroll 4000ms 1 ease both;
   }
-  
-  #spinner::-webkit-scrollbar {
-    display: none;
+  @keyframes scroll {
+    0% {
+      overflow: hidden;
+    }
+    50% {
+      overflow: hidden;
+    }
+    100%{
+      overflow: auto;
+    }
   }
-  
-  #spinner {
-    -ms-overflow-style: none;
-    overflow: -moz-scrollbars-none;
-  }
-  

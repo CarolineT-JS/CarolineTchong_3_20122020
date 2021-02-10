@@ -492,47 +492,57 @@ section h2{
 }
 .cartouche{
   width: 90%;
-  height: 85px;
-  position: relative;
+  height: 65px;
   display: flex;
   justify-content: center;
   margin: 10px 20px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.cartouche:hover{
+  cursor: pointer;
 }
 .plat{
-  width: 70%;
-  height: 65px;
-  border-radius: 12px;
-  background-color: white;
+  width: 90%;
 }
-
+.text {
+  width: 90%;
+}
+.text:hover{
+  width: 60%;
+  transition: 1000ms 0ms ease-in-out;
+}
 .plat h3{
   margin: 10px 0 0 10px;
   color: black;
   font-size: 1em;
 }
-.text{
-  width: 90%;
-}
 .plat .text p{
   margin: 5px 0 0 10px;
   font-size: 0.9em;
+}
+.text h3, .text p{
+  overflow: hidden;
+  white-space: nowrap;
+}
+.avec, .dish{
+  text-overflow: ellipsis;
 }
 .push {
   width: 130px;
   height: 65px;
   z-index: 11;
   display: flex;
+  margin-left: 0%;
   position: absolute;
-  right: 9%;
-  /*overflow: hidden;*/
+  right: -26%;
+  overflow: hidden;
 }
-.prix{
-  margin-right: 33px ;
-  z-index: 10;
-}
+
 .prix p{
   font-size: 0.9em;
-  margin: 30px 0 0 0;
+  margin: 30px 12px 0 0;
   font-weight: bolder;
 }
 .vert{
@@ -544,7 +554,7 @@ section h2{
   align-items: center;
   border-radius: 0 12px 12px 0;
   z-index: 10;
-  margin-right: -70px;
+  margin-left: 12px;
 }
 
 .vert .fas{
@@ -563,14 +573,11 @@ section h2{
 
 /* Animations hover */
 
-.plat:hover{
-  cursor: pointer;
-}
 .plat:hover + .push {
   animation: verte 1000ms ease-in-out 1 both;
 }
-.plat:hover ~ .vert .fas {
-  animation: circle 500ms ease-in 1 both;
+.plat:hover + .push .fas{
+  animation: circle 800ms ease-in 1 both;
 }
 
   @keyframes circle {
@@ -586,8 +593,29 @@ section h2{
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-66px);
+      transform: translateX(-60%);
       }
+  }
+
+#secEntrees{
+  animation: slow 1000ms ease-in-out 1 both;
+}
+#secPlats{
+  animation: slow 1000ms 2000ms ease-in-out 1 both;
+}
+#secDesserts{
+  animation: slow 2000ms 3000ms ease-in-out 1 both;
+}
+  @keyframes slow{
+    0%{
+      opacity: 0;
+    }
+    50%{
+      opacity: 0.5;
+    }
+    100%{
+      opacity: 1;
+    }
   }
 
 /********* CSS MENUS DESKTOP *********/
@@ -599,7 +627,7 @@ section h2{
     width: 60px;
   }
   #mainMenu{
-    animation: monte 3000ms ease-in-out 1;
+    animation: monte 4000ms ease-in-out 1;
   }
   #menuTop h1{
     font-size: 2em;
@@ -609,7 +637,16 @@ section h2{
     right: -11%;
     top: 35%;
   }
-  /*@keyframes monte {
+  #pictop img{
+    max-height: 700px;
+  }
+
+  figure #pic{
+    max-height: 500px;
+  }
+
+
+  @keyframes monte {
     0% {
       transform: translateY(0);
     }
@@ -620,7 +657,4 @@ section h2{
       transform: translateY(0);
     }
   }
-  figure #pic{
-    max-height: 500px;
-  }
-}*/
+}
