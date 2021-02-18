@@ -271,12 +271,11 @@ main figure img{
 
       /* Coeur */
 
-#resto figure figcaption .coeur{
+.coeur{
   position: absolute;
   right: 5%;
   top: 10%;
   cursor: pointer;
-
 }
 .coeur i{
   font-size: 1.5em;
@@ -297,7 +296,7 @@ main figure img{
   z-index: -1;
 }
 .vide:hover + .plein{
-  animation: heart 1500ms ease 1 both;
+  animation: heart 500ms ease 1 both;
   z-index: 50;
 }
 @keyframes heart {
@@ -451,7 +450,13 @@ figure #pic{
   max-height: 300px;
   object-fit: cover;
 }
-
+/* COEUR */
+#menuTop .coeur{
+  bottom: 15%;
+}
+#menuTop .plein{
+ left: 20px;
+}
 /* MENU */
 
 #menuTop{
@@ -494,7 +499,6 @@ section h2{
   width: 90%;
   height: 65px;
   display: flex;
-  justify-content: center;
   margin: 10px 20px;
   background: white;
   border-radius: 12px;
@@ -504,22 +508,24 @@ section h2{
   cursor: pointer;
 }
 .plat{
-  width: 90%;
+  width: 80%;
+  flex-basis: 80%;
 }
 .text {
-  width: 90%;
+  width: 230px;
+  margin-left: 5px;
 }
 .text:hover{
   width: 60%;
-  transition: 1000ms 0ms ease-in-out;
+  transition: 800ms 0ms ease-in-out;
 }
 .plat h3{
-  margin: 10px 0 0 10px;
+  margin: 10px 0 0 5px;
   color: black;
   font-size: 1em;
 }
 .plat .text p{
-  margin: 5px 0 0 10px;
+  margin: 5px;
   font-size: 0.9em;
 }
 .text h3, .text p{
@@ -529,20 +535,14 @@ section h2{
 .avec, .dish{
   text-overflow: ellipsis;
 }
-.push {
-  width: 130px;
+.prix{
+  width: 65px;
   height: 65px;
-  z-index: 11;
-  display: flex;
-  margin-left: 0%;
-  position: absolute;
-  right: -26%;
-  overflow: hidden;
+  margin-left: 10px;
 }
-
 .prix p{
   font-size: 0.9em;
-  margin: 30px 12px 0 0;
+  margin: 34px 0 0 0;
   font-weight: bolder;
 }
 .vert{
@@ -553,8 +553,7 @@ section h2{
   justify-content: center;
   align-items: center;
   border-radius: 0 12px 12px 0;
-  z-index: 10;
-  margin-left: 12px;
+  margin-left: 25px;
 }
 
 .vert .fas{
@@ -573,10 +572,13 @@ section h2{
 
 /* Animations hover */
 
-.plat:hover + .push {
+.cartouche:hover > .prix {
   animation: verte 1000ms ease-in-out 1 both;
 }
-.plat:hover + .push .fas{
+.cartouche:hover > .vert {
+  animation: verte 1000ms ease-in-out 1 both;
+}
+.cartouche:hover > .vert .fas{
   animation: circle 800ms ease-in 1 both;
 }
 
@@ -593,41 +595,19 @@ section h2{
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-60%);
+      transform: translateX(-55%);
       }
   }
-
-#secEntrees{
-  animation: slow 1000ms ease-in-out 1 both;
-}
-#secPlats{
-  animation: slow 1000ms 2000ms ease-in-out 1 both;
-}
-#secDesserts{
-  animation: slow 2000ms 3000ms ease-in-out 1 both;
-}
-  @keyframes slow{
-    0%{
-      opacity: 0;
-    }
-    50%{
-      opacity: 0.5;
-    }
-    100%{
-      opacity: 1;
-    }
-  }
-
-/********* CSS MENUS DESKTOP *********/
-
-@media screen and (min-width: 1200px)
-{
-  .border{
+  
+  /********* CSS MENUS DESKTOP *********/
+  
+  @media screen and (min-width: 1200px)
+  {
+    .border{
     margin: 0 auto;
     width: 60px;
   }
   #mainMenu{
-    animation: monte 4000ms ease-in-out 1;
   }
   #menuTop h1{
     font-size: 2em;
@@ -640,21 +620,57 @@ section h2{
   #pictop img{
     max-height: 700px;
   }
-
+  
   figure #pic{
     max-height: 500px;
   }
+  .cartouche{
+    width: 95%;
+  }
+  .prix {
+    margin-right: 0%;
+  }
+}
+/* Animations Menus */
 
-
-  @keyframes monte {
-    0% {
+#secEntrees .cartouche:nth-child(3n){
+  animation: slow 1000ms ease-in-out 1 both;
+}
+#secEntrees .cartouche:nth-child(4n){
+  animation: slow 1000ms 1000ms ease-in-out 1 both;
+}
+#secEntrees .cartouche:nth-child(5n){
+  animation: slow 1000ms 2000ms ease-in-out 1 both;
+}
+#secPlats .cartouche:nth-child(3n){
+  animation: slow 1000ms 3000ms ease-in-out 1 both;
+}
+#secPlats .cartouche:nth-child(4n){
+  animation: slow 1000ms 4000ms ease-in-out 1 both;
+}
+#secPlats .cartouche:nth-child(5n){
+  animation: slow 1000ms 5000ms ease-in-out 1 both;
+}
+#secDesserts .cartouche:nth-child(3n){
+  animation: slow 1000ms 6000ms ease-in-out 1 both;
+}
+#secDesserts .cartouche:nth-child(4n){
+  animation: slow 1000ms 7000ms ease-in-out 1 both;
+}
+#secDesserts .cartouche:nth-child(5n){
+  animation: slow 1000ms 8000ms ease-in-out 1 both;
+}
+  @keyframes slow{
+    0%{
+      opacity: 0;
       transform: translateY(0);
     }
-    50% {
-      transform: translateY(-35%);
+    50%{
+      opacity: 0.5;
+      transform: translateY(-5%);
     }
-    100% {
+    100%{
+      opacity: 1;
       transform: translateY(0);
     }
   }
-}
