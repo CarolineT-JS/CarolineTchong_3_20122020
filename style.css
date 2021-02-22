@@ -297,7 +297,7 @@ main figure img{
 }
 .vide:hover + .plein{
   animation: heart 500ms ease 1 both;
-  z-index: 50;
+  z-index: 30;
 }
 @keyframes heart {
   0% {
@@ -339,9 +339,56 @@ footer a{
 }
 
 
-/********* RESPONSIVE TABLET Large *********/
+/********* RESPONSIVE SMARTPHONE Small *********/
 
-@media screen and (min-width: 768px) and (max-width: 1200px)
+@media screen and (min-width: 321px) and (max-width: 424px)
+{
+  .prix {
+    margin-right: 1%;
+    margin-left: 10% !IMPORTANT;
+  }
+  .vert{
+    right: -28% !IMPORTANT;
+  }
+  .cartouche:hover > .vert{
+    animation: vert 1000ms cubic-bezier(.7,.33,.33,.69) 1 both !IMPORTANT;
+  }
+  @keyframes vert {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-55px);
+      }
+    }
+}
+/********* RESPONSIVE SMARTPHONE LARGE *********/
+
+@media screen and (min-width: 425px) and (max-width: 699px)
+{
+  .prix {
+    margin-left: 8% !IMPORTANT;
+    margin-right: 2%;
+  }
+  .vert{
+    right: -17% !IMPORTANT;
+  }
+}
+/********* RESPONSIVE TABLET small *********/
+
+@media screen and (min-width: 700px) and (max-width: 919px)
+{
+  .prix {
+    margin-left: 30% !IMPORTANT;
+    margin-right: 2% !IMPORTANT;
+  }
+  .vert{
+    right: -14% !IMPORTANT;
+  }
+}
+/********* RESPONSIVE TABLET LARGE *********/
+
+@media screen and (min-width: 920px) and (max-width: 1200px)
 {
   #container{
     width: 60%;
@@ -358,20 +405,7 @@ footer a{
   #how a{
     margin: 0 !IMPORTANT;
   }
-  #mainMenu{
-    animation: monte 3000ms ease-in-out 1;
-  }
-  @keyframes monte {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+  /* Restaurants */
   figure #pic{
     max-height: 400px !IMPORTANT;
   }
@@ -383,13 +417,31 @@ footer a{
     right: -10% !IMPORTANT;
     top: 40% !IMPORTANT;
   }
+  section h2{
+    text-align: center;
+    padding-bottom: 2% !IMPORTANT;
+  }
+  .border{
+    margin: 0 auto !IMPORTANT;
+    width: 60px;
+    margin-bottom: 50px !IMPORTANT;
+  }
+  .prix {
+    margin-left: 58% !IMPORTANT;
+    margin-right: 2%;
+  }
+  .vert{
+    right: -11% !IMPORTANT;
+  }
 }
-
 /********* RESPONSIVE DESKTOP *********/
 
 @media screen and (min-width: 1200px)
 {
-  #container{width: 70% !IMPORTANT;}
+  #container{
+    width: 70% !IMPORTANT;
+    max-width: 1024px;
+  }
     /* TOP */
   #entreprise{
     width: 80%;
@@ -457,6 +509,10 @@ figure #pic{
 #menuTop .plein{
  left: 20px;
 }
+.vide:hover + .plein{
+  animation: heart 500ms ease 1 both;
+  z-index: 30;
+} 
 /* MENU */
 
 #menuTop{
@@ -485,7 +541,9 @@ figure #pic{
   position: relative;
   top: -44px;
 }
-
+.border{
+  margin-bottom: 60px;
+}
 section h2{
   padding-bottom: 0;
   margin-bottom: 5px;
@@ -509,14 +567,14 @@ section h2{
 }
 .plat{
   width: 80%;
-  flex-basis: 80%;
 }
 .text {
-  width: 230px;
+  min-width: 240px;
+  flex-basis: 20em;
   margin-left: 5px;
 }
 .text:hover{
-  width: 60%;
+  width: 280px;
   transition: 800ms 0ms ease-in-out;
 }
 .plat h3{
@@ -538,7 +596,7 @@ section h2{
 .prix{
   width: 65px;
   height: 65px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .prix p{
   font-size: 0.9em;
@@ -553,7 +611,8 @@ section h2{
   justify-content: center;
   align-items: center;
   border-radius: 0 12px 12px 0;
-  margin-left: 25px;
+  position: absolute;
+  right: -33%;
 }
 
 .vert .fas{
@@ -573,10 +632,10 @@ section h2{
 /* Animations hover */
 
 .cartouche:hover > .prix {
-  animation: verte 1000ms ease-in-out 1 both;
+  animation: verte 1000ms cubic-bezier(.7,.33,.33,.69) 1 both;
 }
 .cartouche:hover > .vert {
-  animation: verte 1000ms ease-in-out 1 both;
+  animation: verte 1000ms cubic-bezier(.7,.33,.33,.69) 1 both;
 }
 .cartouche:hover > .vert .fas{
   animation: circle 800ms ease-in 1 both;
@@ -595,10 +654,69 @@ section h2{
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-55%);
+      transform: translateX(-95px);
       }
   }
   
+/* Animations Menus */
+
+#secEntrees .cartouche:nth-child(3n){
+  animation: slow 500ms cubic-bezier(.11,.43,.22,.64) 1 both;
+}
+#secEntrees .cartouche:nth-child(4n){
+  animation: slow 500ms 300ms cubic-bezier(.11,.43,.22,.64) 1 both;
+}
+#secEntrees .cartouche:nth-child(5n){
+  animation: slow 500ms 600ms cubic-bezier(.11,.43,.22,.64) 1 both;
+}
+#secEntrees .cartouche:nth-child(6n){
+  animation: slow 500ms 900ms cubic-bezier(.11,.43,.22,.64) 1 both;
+}
+#secPlats .cartouche:nth-child(3n){
+  animation: slow 500ms cubic-bezier(.11,.43,.22,.64) 1 both;
+}
+#secPlats .cartouche:nth-child(4n){
+  animation: slow 500ms 300ms cubic-bezier(.11,.43,.22,.64) 1 both;
+}
+#secPlats .cartouche:nth-child(5n){
+  animation: slow 500ms 600ms cubic-bezier(.11,.43,.22,.64) 1 both;
+}
+#secDesserts .cartouche:nth-child(3n){
+  animation: slow 500ms cubic-bezier(.11,.43,.22,.64) 1 both;
+}
+#secDesserts .cartouche:nth-child(4n){
+  animation: slow 500ms 300ms cubic-bezier(.11,.43,.22,.64) 1 both;
+}
+#secDesserts .cartouche:nth-child(5n){
+  animation: slow 500ms 600ms cubic-bezier(.11,.43,.22,.64) 1 both;
+}
+  @keyframes slow{
+    0%{
+      opacity: 0;
+      transform: translateY(0);
+    }
+    25%{
+      opacity: 0.2;
+      transform: translateY(-10);
+    }
+    50%{
+      opacity: 0.4;
+      transform: translateY(-20);
+    }
+    75%{
+      opacity: 0.6;
+      transform: translateY(-30);
+    }
+    85%{
+      opacity: 0.8;
+      transform: translateY(-35);
+    }
+    100%{
+      opacity: 1;
+      transform: translateY(-40px);
+    }
+  }
+
   /********* CSS MENUS DESKTOP *********/
   
   @media screen and (min-width: 1200px)
@@ -606,8 +724,7 @@ section h2{
     .border{
     margin: 0 auto;
     width: 60px;
-  }
-  #mainMenu{
+    margin-bottom: 50px;
   }
   #menuTop h1{
     font-size: 2em;
@@ -620,57 +737,17 @@ section h2{
   #pictop img{
     max-height: 700px;
   }
-  
-  figure #pic{
+    figure #pic{
     max-height: 500px;
   }
   .cartouche{
     width: 95%;
+    z-index: -1;
   }
   .prix {
-    margin-right: 0%;
+    margin-left: 20% !important;
+  }
+  .vert {
+    right: -10%;
   }
 }
-/* Animations Menus */
-
-#secEntrees .cartouche:nth-child(3n){
-  animation: slow 1000ms ease-in-out 1 both;
-}
-#secEntrees .cartouche:nth-child(4n){
-  animation: slow 1000ms 1000ms ease-in-out 1 both;
-}
-#secEntrees .cartouche:nth-child(5n){
-  animation: slow 1000ms 2000ms ease-in-out 1 both;
-}
-#secPlats .cartouche:nth-child(3n){
-  animation: slow 1000ms 3000ms ease-in-out 1 both;
-}
-#secPlats .cartouche:nth-child(4n){
-  animation: slow 1000ms 4000ms ease-in-out 1 both;
-}
-#secPlats .cartouche:nth-child(5n){
-  animation: slow 1000ms 5000ms ease-in-out 1 both;
-}
-#secDesserts .cartouche:nth-child(3n){
-  animation: slow 1000ms 6000ms ease-in-out 1 both;
-}
-#secDesserts .cartouche:nth-child(4n){
-  animation: slow 1000ms 7000ms ease-in-out 1 both;
-}
-#secDesserts .cartouche:nth-child(5n){
-  animation: slow 1000ms 8000ms ease-in-out 1 both;
-}
-  @keyframes slow{
-    0%{
-      opacity: 0;
-      transform: translateY(0);
-    }
-    50%{
-      opacity: 0.5;
-      transform: translateY(-5%);
-    }
-    100%{
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
