@@ -364,14 +364,26 @@ footer a{
 }
 /********* RESPONSIVE SMARTPHONE LARGE *********/
 
-@media screen and (min-width: 425px) and (max-width: 699px)
+@media screen and (min-width: 375px) and (max-width: 424px)
 {
   .prix {
-    margin-left: 8% !IMPORTANT;
+    margin-left: 13% !IMPORTANT;
     margin-right: 2%;
   }
   .vert{
-    right: -17% !IMPORTANT;
+    right: -20% !IMPORTANT;
+  }
+}
+/********* RESPONSIVE SMARTPHONE LARGE *********/
+
+@media screen and (min-width: 425px) and (max-width: 699px)
+{
+  .prix {
+    margin-left: 10% !IMPORTANT;
+    margin-right: 2%;
+  }
+  .vert{
+    right: -25% !IMPORTANT;
   }
 }
 /********* RESPONSIVE TABLET small *********/
