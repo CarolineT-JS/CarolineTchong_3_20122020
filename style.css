@@ -293,8 +293,10 @@ main figure img{
   z-index: 20;
 }
 .plein{
+  font-size: 1.3em !IMPORTANT;
   position: absolute;
-  left: 0;
+  left: 1.5px;
+  top: 3px;
   background: linear-gradient(#9356DC,50%,#ee91d5);
   background-clip: content-box;
   -webkit-background-clip: text;
