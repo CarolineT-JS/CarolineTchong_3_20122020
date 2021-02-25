@@ -1,4 +1,4 @@
- /* Loading Spinner */
+/********* Loading Spinner *********/
 
  @keyframes off {
    0% {
@@ -29,7 +29,7 @@
 
  #spinner{
     width: 100%;
-    height: 125%;
+    height: 2000px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -64,7 +64,7 @@
       overflow: auto;
     }
   }
-  /********* RESPONSIVE SMARTPHONE Small *********/
+  /**** RESPONSIVE SMARTPHONE Small ****/
 
 @media screen and (min-width: 320px) and (max-width: 425px)
 {
@@ -75,7 +75,7 @@
     margin-top: 100%;
   }
 }
-  /********* RESPONSIVE SMARTPHONE LARGE *********/
+  /**** RESPONSIVE SMARTPHONE LARGE ****/
 
   @media screen and (min-width: 426px) and (max-width: 769px)
   {
@@ -85,3 +85,4 @@
       margin-top: 50%;
   }
 }
+

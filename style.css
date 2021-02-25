@@ -23,15 +23,15 @@
   font-size: 16px;
   background-color: #f6f6f6;
   z-index: 2;
-  overflow: hidden;
 }
 body{
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 a {text-decoration: none;}
-p {color: black;}
+p {color: rgb(53, 52, 52);}
 h1, h2{
 font-size: 1.4em;
 text-shadow: 1px 2px 8px #e7e7e7;
@@ -227,6 +227,9 @@ section figure{
   margin: 15px;
   position: relative;
 }
+figure:hover {
+  box-shadow: 2px 3px 10px #8b8a8a;
+}
 main figure img{
   width: 100%;
   height: 120px;
@@ -306,9 +309,9 @@ main figure img{
   transition: opacity 500ms ease;
 }
 .vide:hover + .plein{
-z-index: 30;
-transition-duration: 500ms;
-opacity: 1;
+  z-index: 30;
+  transition-duration: 500ms;
+  opacity: 1;
 }
 
 /* FOOTER */
@@ -436,17 +439,21 @@ figure #pic{
   object-fit: cover;
 }
 /* COEUR */
+
+#menuTop{width: 80% !important;}
 #menuTop .coeur{
   bottom: 15%;
 }
-#menuTop .plein{
-left: 15px;
+#menuTop .plein {
+  left: 21px;
+  top: 20px;
+  font-size: 16.5px !important;
 }
 
 /* MENU */
 
 #menuTop{
-  width: 80%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   margin-left: 20px;
@@ -459,7 +466,6 @@ left: 15px;
 #menuTop i{
   font-size: 1.2em;
   position: absolute;
-  right: -5%;
   top: 35%;
 }
 #mainMenu{
@@ -654,10 +660,15 @@ section h2{
 
 @media screen and (min-width: 321px) and (max-width: 424px)
 {
-.prix {
+  #menuTop {width: 80% !IMPORTANT;}
+  #menuTop .plein {
+    left: 21px;
+    top: 18px;
+    font-size: 17px !important;}
+  .prix {
   margin-right: 1%;
   margin-left: 10% !IMPORTANT;
-}
+  }
 .vert{right: -28% !IMPORTANT;}
 
 .cartouche:hover > .vert{
@@ -688,6 +699,7 @@ section h2{
 
 @media screen and (min-width: 425px) and (max-width: 699px)
 {
+  #menuTop .plein{top: 19px !important;}
 .prix {
   margin-left: 10% !IMPORTANT;
   margin-right: 2%;
@@ -719,11 +731,11 @@ section h2{
 figure #pic{max-height: 400px !IMPORTANT;}
 #menuTop h1{font-size: 2em;}
 
-#menuTop i{
-  font-size: 1.5em !IMPORTANT;
-  right: -10% !IMPORTANT;
-  top: 40% !IMPORTANT;
-}
+#menuTop .vide{font-size: 1.5em !important;}
+#menuTop .plein{
+  font-size: 20px !important;
+  left: 22px;
+  top: 26px;}
 section h2{
   text-align: center;
   padding-bottom: 2% !IMPORTANT;
@@ -756,12 +768,11 @@ section h2{
   margin-bottom: 50px;
   }
   #menuTop h1{font-size: 2em;}
-
-  #menuTop i{
-  font-size: 1.5em;
-  right: -11%;
-  top: 35%;
-  }
+  #menuTop .vide{font-size: 1.5em;}
+  #menuTop .plein{
+    font-size: 20px !important;
+    left: 22px;
+    top: 26px;}
   #pictop img{max-height: 700px;}
   figure #pic{max-height: 500px;}
 
