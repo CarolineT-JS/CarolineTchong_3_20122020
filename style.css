@@ -1,39 +1,40 @@
  /* Définition des polices */
+ @font-face {
+  font-family: 'Shrikhand';
+  src: url('Font/Shrikhand-Regular.ttf') format('truetype')
+}
 @font-face {
-    font-family: 'Shrikhand';
-    src: url('Font/Shrikhand-Regular.ttf') format('truetype')
-  }
+  font-family: 'Roboto';
+  src: url('Font/Roboto-Regular.ttf') format('truetype')
+}
 @font-face {
-    font-family: 'Roboto';
-    src: url('Font/Roboto-Regular.ttf') format('truetype')
-  }
-@font-face {
-    font-family: 'Roboto-Bold';
-    src: url('Font/Roboto-Bold.ttf') format('truetype')
-  }
+  font-family: 'Roboto-Bold';
+  src: url('Font/Roboto-Bold.ttf') format('truetype')
+}
 
- /* Body */
+/**** CSS Communs à la page d'Accueil et aux pages Menus ****/
+
+/* Body */
 
 #container {
-    width: 100%;
-    font-family: 'Roboto';
-    margin: 0 auto !IMPORTANT;
-    font-size: 16px;
-    background-color: #f6f6f6;
-    z-index: 2;
-    overflow: hidden;
-  }
-body{
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  font-family: 'Roboto';
+  margin: 0 auto !IMPORTANT;
+  font-size: 16px;
+  background-color: #f6f6f6;
+  z-index: 2;
+  overflow: hidden;
 }
-/* Concaténation */
+body{
+  margin: 0;
+  padding: 0;
+}
 
 a {text-decoration: none;}
-p{color: black;}
+p {color: black;}
 h1, h2{
-  font-size: 1.4em;
-  text-shadow: 1px 2px 8px #e7e7e7;
+font-size: 1.4em;
+text-shadow: 1px 2px 8px #e7e7e7;
 }
 
 figure{box-shadow: 1px 2px 8px #e7e7e7;}
@@ -44,14 +45,22 @@ figure{box-shadow: 1px 2px 8px #e7e7e7;}
 header{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-align: center;
   background-color: white;
   position: relative;
 }
+      /* LOGO */
 
-      /* Flèche */
+#logo {
+  width: 50%;
+  height: 40%;
+  padding: 20px 0 10px 0;
+  margin: 0 auto;
+}
+
+      /* Flèche pages Menus */
 
 header .fas{
   position: absolute;
@@ -59,14 +68,11 @@ header .fas{
   left: 5%;
   font-size: 1.2em;
 }
-       /* LOGO */
-  
-#logo{
-    width: 45%;
-    height: 40%;
-    padding: 20px 0 10px 0;
-    margin: 0 auto;
-}
+
+
+/******** CSS Page d'Accueil *********/
+
+
 /* ENTREPRISE */
 
 #entreprise{
@@ -88,11 +94,12 @@ header .fas{
   align-items: center;
   padding-right: 12%;
   border-top: 3px #d5d5d5 solid;
-  border-bottom: 2px white solid;
+  border-bottom: 1px white solid;
   text-align: center;
 }
-#lieu a{width: 10%;}
-#lieu img{width: 70%;}
+#lieu img{
+  width: 50%;
+}
 
       /* CADRE RESERVER */
 
@@ -122,7 +129,6 @@ button{
   box-shadow: 1px 2px 8px #afadad;
   font-size: 1em;
 }
-
 button:hover {
   background: linear-gradient(.49turn, #ee91d5, 50%,#a276d8);
   box-shadow: 2px 3px 10px #8b8a8a;
@@ -227,6 +233,7 @@ main figure img{
   border-radius: 15px 15px 0 0;
 }
       /* Ajustement des photos */
+
 #resto figure #gout{
   object-fit: cover;
   object-position: 0px -40px;
@@ -240,6 +247,7 @@ main figure img{
   object-position: 0px -48px;
 }
       /* Positionnement de Nouveau */
+
 .new{
   width: 70px;
   position: absolute;
@@ -261,7 +269,6 @@ main figure img{
   height: 50px;
   position: relative;
 }
-
 #resto figure figcaption h3{
   margin: 10px 0 0 15px;
 }
@@ -289,23 +296,17 @@ main figure img{
   position: absolute;
   left: 0;
   background: linear-gradient(#9356DC,50%,#ee91d5);
-  background-clip: text;
+  background-clip: content-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
   z-index: -1;
+  transition: opacity 500ms ease;
 }
 .vide:hover + .plein{
-  animation: heart 500ms ease 1 both;
-  z-index: 30;
-}
-@keyframes heart {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+z-index: 30;
+transition-duration: 500ms;
+opacity: 1;
 }
 
 /* FOOTER */
@@ -338,169 +339,87 @@ footer a{
   margin: 5px;
 }
 
+/******* Ajout des BREAKPOINTS page d'Accueil ********/
 
-/********* RESPONSIVE SMARTPHONE Small *********/
+/*** RESPONSIVE small DESKTOP ***/
 
-@media screen and (min-width: 321px) and (max-width: 424px)
+@media screen and (min-width: 426px) and (max-width: 768px)
 {
-  .prix {
-    margin-right: 1%;
-    margin-left: 10% !IMPORTANT;
-  }
-  .vert{
-    right: -28% !IMPORTANT;
-  }
-  .cartouche:hover > .vert{
-    animation: vert 1000ms cubic-bezier(.7,.33,.33,.69) 1 both !IMPORTANT;
-  }
-  @keyframes vert {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-55px);
-      }
-    }
+#container{width: 60%;}
+#lieu {padding-right: 5%;}
+nav h2{text-align: center;}
+nav figure{width: 100%;}
+#how{
+  width: 50%;
+  margin: 0 auto;
 }
-/********* RESPONSIVE SMARTPHONE LARGE *********/
+#how a{margin: 0 !IMPORTANT;}
+#resto {justify-content: center;}
+figure{flex-basis: 40%;}
+} 
+/*** RESPONSIVE LARGE DESKTOP ***/
 
-@media screen and (min-width: 375px) and (max-width: 424px)
+@media screen and (min-width: 769px)
 {
-  .prix {
-    margin-left: 13% !IMPORTANT;
-    margin-right: 2%;
-  }
-  .vert{
-    right: -20% !IMPORTANT;
-  }
+#container{
+  width: 90% !IMPORTANT;
+  max-width: 1024px;
 }
-/********* RESPONSIVE SMARTPHONE LARGE *********/
+  /* TOP */
 
-@media screen and (min-width: 425px) and (max-width: 699px)
-{
-  .prix {
-    margin-left: 10% !IMPORTANT;
-    margin-right: 2%;
-  }
-  .vert{
-    right: -25% !IMPORTANT;
-  }
+#entreprise{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
-/********* RESPONSIVE TABLET small *********/
-
-@media screen and (min-width: 700px) and (max-width: 919px)
-{
-  .prix {
-    margin-left: 30% !IMPORTANT;
-    margin-right: 2% !IMPORTANT;
-  }
-  .vert{
-    right: -14% !IMPORTANT;
-  }
+#lieu{
+  width: 20%;
+  height: 40px;
 }
-/********* RESPONSIVE TABLET LARGE *********/
-
-@media screen and (min-width: 920px) and (max-width: 1200px)
-{
-  #container{
-    width: 60%;
-  }
+#lieu img{
+  width: 25px;
+  position: relative;
+  left: -50px;
+}
   /* Fonctionnement */
-  #lieu img{width: 50%;}
-  nav h2{
-    text-align: center;
-  }
-  #how{
-    width: 70%;
-    margin: 0 auto;
-  }
-  #how a{
-    margin: 0 !IMPORTANT;
-  }
+
+h2{
+  padding: 1%;
+  font-size: 1.6em;
+}
+#how {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#how a{margin: 0 10px;}
+
   /* Restaurants */
-  figure #pic{
-    max-height: 400px !IMPORTANT;
-  }
-  #menuTop h1{
-    font-size: 2em;
-  }
-  #menuTop i{
-    font-size: 1.5em !IMPORTANT;
-    right: -10% !IMPORTANT;
-    top: 40% !IMPORTANT;
-  }
-  section h2{
-    text-align: center;
-    padding-bottom: 2% !IMPORTANT;
-  }
-  .border{
-    margin: 0 auto !IMPORTANT;
-    width: 60px;
-    margin-bottom: 50px !IMPORTANT;
-  }
-  .prix {
-    margin-left: 58% !IMPORTANT;
-    margin-right: 2%;
-  }
-  .vert{
-    right: -11% !IMPORTANT;
-  }
+
+section h2{
+  text-align: center;
+  padding-bottom: 2% !IMPORTANT;
 }
-/********* RESPONSIVE DESKTOP *********/
+#resto{
+  width: 100%;
+  justify-content: center;
+}
+figure{flex-basis: 40%;}
 
-@media screen and (min-width: 1200px)
-{
-  #container{
-    width: 70% !IMPORTANT;
-    max-width: 1024px;
-  }
-    /* TOP */
-  #entreprise{
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
-  #lieu{width: 15%;}
-  #lieu img{
-    width: 25px;
-    position: relative;
-    left: -50px;
-  }
-    /* Fonctionnement */
-  h2{
-    padding: 1%;
-    font-size: 1.6em;
-  }
-  #how {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  #how a{margin: 0 20px;}
+  /* Footer */
 
-    /* Restaurants */
-  section h2{
-    text-align: center;
-    padding-bottom: 2% !IMPORTANT;
-  }
-  #resto{
-    width: 100%;
-    justify-content: center;
-  }
-  figure{flex-basis: 40%;}
-    /* Footer */
-  footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
-  footer a{font-size: 1em;}
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+footer a{font-size: 1em;}
 }
 
-/********* CSS MENUS *********/
+/************* CSS pages Menus ***********/
 
 #container{
   width: 100%;
@@ -519,12 +438,9 @@ figure #pic{
   bottom: 15%;
 }
 #menuTop .plein{
- left: 20px;
+left: 15px;
 }
-.vide:hover + .plein{
-  animation: heart 500ms ease 1 both;
-  z-index: 30;
-} 
+
 /* MENU */
 
 #menuTop{
@@ -581,13 +497,13 @@ section h2{
   width: 80%;
 }
 .text {
-  min-width: 240px;
+  width: 240px;
   flex-basis: 20em;
   margin-left: 5px;
 }
 .text:hover{
-  width: 280px;
-  transition: 800ms 0ms ease-in-out;
+  width: 50%;
+  transition: width 1000ms 0ms linear;
 }
 .plat h3{
   margin: 10px 0 0 5px;
@@ -650,7 +566,7 @@ section h2{
   animation: verte 1000ms cubic-bezier(.7,.33,.33,.69) 1 both;
 }
 .cartouche:hover > .vert .fas{
-  animation: circle 800ms ease-in 1 both;
+  animation: circle 500ms 300ms ease-in 1 both;
 }
 
   @keyframes circle {
@@ -709,19 +625,19 @@ section h2{
     }
     25%{
       opacity: 0.2;
-      transform: translateY(-10);
+      transform: translateY(-10px);
     }
     50%{
       opacity: 0.4;
-      transform: translateY(-20);
+      transform: translateY(-20px);
     }
     75%{
       opacity: 0.6;
-      transform: translateY(-30);
+      transform: translateY(-30px);
     }
     85%{
       opacity: 0.8;
-      transform: translateY(-35);
+      transform: translateY(-35px);
     }
     100%{
       opacity: 1;
@@ -729,37 +645,134 @@ section h2{
     }
   }
 
-  /********* CSS MENUS DESKTOP *********/
-  
-  @media screen and (min-width: 1200px)
-  {
-    .border{
-    margin: 0 auto;
-    width: 60px;
-    margin-bottom: 50px;
+/******* Ajout des BREAKPOINTS des pages Menus ********/
+
+
+/*** RESPONSIVE small SMARTPHONE ***/
+
+@media screen and (min-width: 321px) and (max-width: 424px)
+{
+.prix {
+  margin-right: 1%;
+  margin-left: 10% !IMPORTANT;
+}
+.vert{right: -28% !IMPORTANT;}
+
+.cartouche:hover > .vert{
+  animation: vert 1000ms cubic-bezier(.7,.33,.33,.69) 1 both !IMPORTANT;
+}
+@keyframes vert {
+  0% {
+    transform: translateX(0);
   }
-  #menuTop h1{
-    font-size: 2em;
+  100% {
+    transform: translateX(-55px);
+    }
   }
+}
+
+/*** RESPONSIVE LARGE SMARTPHONE ***/
+
+@media screen and (min-width: 375px) and (max-width: 424px)
+{
+.prix {
+  margin-left: 13% !IMPORTANT;
+  margin-right: 2%;
+}
+.vert{right: -20% !IMPORTANT;}
+}
+
+/*** RESPONSIVE small TABLET ***/
+
+@media screen and (min-width: 425px) and (max-width: 699px)
+{
+.prix {
+  margin-left: 10% !IMPORTANT;
+  margin-right: 2%;
+}
+.vert{right: -25% !IMPORTANT;}
+}
+
+/*** RESPONSIVE LARGE TABLET ***/
+
+@media screen and (min-width: 700px) and (max-width: 919px)
+{
+.text {
+  width: 450px;
+}
+.text:hover{
+  width: 100%;
+}
+.prix {
+  margin-left: 20% !IMPORTANT;
+  margin-right: 2% !IMPORTANT;
+}
+.vert{right: -14% !IMPORTANT;}
+}
+
+/*** RESPONSIVE small DESKTOP ***/
+
+@media screen and (min-width: 920px) and (max-width: 1200px)
+{
+figure #pic{max-height: 400px !IMPORTANT;}
+#menuTop h1{font-size: 2em;}
+
+#menuTop i{
+  font-size: 1.5em !IMPORTANT;
+  right: -10% !IMPORTANT;
+  top: 40% !IMPORTANT;
+}
+section h2{
+  text-align: center;
+  padding-bottom: 2% !IMPORTANT;
+}
+.border{
+  margin: 0 auto !IMPORTANT;
+  width: 60px;
+  margin-bottom: 50px !IMPORTANT;
+}
+.text {
+  width: 450px;
+}
+.text:hover{
+  width: 100%;
+}
+.prix {
+  margin-left: 35% !IMPORTANT;
+  margin-right: 2%;
+}
+.vert{right: -11.5% !IMPORTANT;}
+}
+
+/*** RESPONSIVE LARGE DESKTOP ***/
+
+@media screen and (min-width: 1200px)
+{
+  .border{
+  margin: 0 auto;
+  width: 60px;
+  margin-bottom: 50px;
+  }
+  #menuTop h1{font-size: 2em;}
+
   #menuTop i{
-    font-size: 1.5em;
-    right: -11%;
-    top: 35%;
+  font-size: 1.5em;
+  right: -11%;
+  top: 35%;
   }
-  #pictop img{
-    max-height: 700px;
-  }
-    figure #pic{
-    max-height: 500px;
-  }
+  #pictop img{max-height: 700px;}
+  figure #pic{max-height: 500px;}
+
   .cartouche{
-    width: 95%;
-    z-index: -1;
+  width: 95%;
+  z-index: -1;
   }
-  .prix {
-    margin-left: 20% !important;
+  .text {
+    width: 450px;
   }
-  .vert {
-    right: -10%;
+  .text:hover{
+    width: 100%;
   }
+  .prix {margin-left: 20% !important;}
+  .vert {right: -10%;}
 }
