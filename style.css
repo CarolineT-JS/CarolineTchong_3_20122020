@@ -1,4 +1,5 @@
  /* Définition des polices */
+
  @font-face {
   font-family: 'Shrikhand';
   src: url('Font/Shrikhand-Regular.ttf') format('truetype')
@@ -12,24 +13,18 @@
   src: url('Font/Roboto-Bold.ttf') format('truetype')
 }
 
-/**** CSS Communs à la page d'Accueil et aux pages Menus ****/
-
 /* Body */
 
 #container {
-  width: 100%;
-  font-family: 'Roboto';
-  margin: 0 auto !IMPORTANT;
   font-size: 16px;
   background-color: #f6f6f6;
-  z-index: 2;
 }
 body{
   margin: 0;
   padding: 0;
 }
 
-/**** Refactoring en cours ****/
+/**** Refactoring de toutes les pages sans les BreakPoints ****/
 
 a {text-decoration: none;}
 p {color: rgb(53, 52, 52);}
@@ -39,82 +34,112 @@ text-shadow: 1px 2px 8px #e7e7e7;
 }
 
 figure{box-shadow: 1px 2px 8px #e7e7e7;}
+figure:hover, button:hover
+{box-shadow: 2px 3px 10px #8b8a8a;}
+
+#container, header, #entreprise, #lieu, section figure, main figure img, #resto figure figcaption, figure #pic, #mainMenu
+{width: 100%;}
+
+nav figure, #resto, #menuTop, .cartouche
+{width: 90% !important;}
+
+#lieu input, #reserver h1, #menuTop, .plat
+{width: 80% !important;}
+
+#container, button, footer
+{font-family: 'Roboto', 'Sans Serif', 'Serif';}
+
+#reserver h1, nav figure p
+{font-family: 'Roboto-Bold', 'Sans Serif', 'Serif';}
+
+footer h4, #menuTop h1
+{font-family: 'Shrikhand', 'Sans Serif', 'Serif';}
+
+header, #entreprise, nav figure, .icones, .rond, #resto, footer, #menuTop, .cartouche, .vert, #bouton
+{display: flex;}
+
+header, #entreprise, .rond, .vert, #bouton
+{justify-content: center;}
+
+header, .icones, .rond, .vert
+{align-items: center;}
+
+header, #entreprise, #lieu input
+{text-align: center;}
+
+header .fas, header .fas:active
+{color: black;}
+
+#container, #entreprise, #reserver h1, #resto
+{margin: 0 auto;}
+
+#entreprise, #resto
+{flex-wrap: wrap;}
+
+header, #lieu, .rond, section figure, #resto figure figcaption, #menuTop, #mainMenu
+{position: relative;}
+
+header .fas, #lieu img, .new, .coeur, .plein, .vert
+{position: absolute;}
+
+#lieu input, button, #fork, #hands, footer a, .plat h3, #bouton button
+{font-size: 1em;}
+
+button, .plein
+{background: linear-gradient(.49turn, #FF79DA, 50%,#9356DC);}
+
+button, .rond, footer, footer h4, footer a
+{color: white;}
+
+.cartouche, .text h3, .text p
+{overflow: hidden;}
+
+.coeur, .cartouche:hover
+{cursor: pointer;}
 
 
 /* HEADER */
 
-header{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: white;
-  position: relative;
-}
+header{background-color: white;}
+
       /* LOGO */
 
 #logo {
   width: 50%;
-  height: 40%;
-  padding: 20px 0 10px 0;
-  margin: 0 auto;
+  height: auto;
+  padding: 10px;
 }
 
       /* Flèche pages Menus */
 
 header .fas{
-  position: absolute;
-  top: 40%;
+  top: 28%;
   left: 5%;
   font-size: 1.2em;
 }
 
-
 /******** CSS Page d'Accueil *********/
 
-
-/* ENTREPRISE */
-
-#entreprise{
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-}
       /* LIEU */
 
-#lieu{
-  width: 100%;
-  display: flex;
-  background-color: #eaeaea;
-  justify-content: center;
-  align-items: center;
-  padding-right: 12%;
-  border-top: 3px #d5d5d5 solid;
-  border-bottom: 1px white solid;
-  text-align: center;
-}
 #lieu img{
-  width: 50%;
+  width: 1.2em;
+  left: 24%;
+  top: 25%;
+}
+
+#lieu input{
+  background-color: #eaeaea;
+  padding: 10px 30px;
+  border: 2px white inset;
+  font-weight: 600;
 }
 
       /* CADRE RESERVER */
 
 #reserver{
-  text-align: center;
   background-color: #f6f6f6;
   padding-top: 30px;
-}
-#reserver h1{
-  width: 80%;
-  font-family: 'Roboto-Bold';
-  font-weight: 900;
-  padding: 0;
-  margin: 0 auto;
 }
 #reserver p{
   color: #414141;
@@ -125,63 +150,35 @@ button{
   padding: 15px 40px;
   border: 0;
   border-radius: 25px;
-  background: linear-gradient(.49turn, #FF79DA, 50%,#9356DC);
-  color: white;
   box-shadow: 1px 2px 8px #afadad;
-  font-size: 1em;
 }
-button:hover {
-  background: linear-gradient(.49turn, #ee91d5, 50%,#a276d8);
-  box-shadow: 2px 3px 10px #8b8a8a;
-}
+button:hover {background: linear-gradient(.49turn, #ee91d5, 50%,#a276d8);}
 
 /* NAV */
 
 nav{
-  align-items: flex-start;
-  justify-content: center;
   padding: 10px 0 30px 0;
   background-color: white;
-  margin: 0 auto;
-  text-align: center;
 }
 h2{
   padding: 5%;
   font-weight: 900;
+  text-align: left;
 }
 nav figure{
-  width: 90%;
   margin: 20px;
   padding: 5px 0;
-  display: flex;
-  flex-direction: row;
   background-color: #f6f6f6;
   border-radius: 15px;
-  align-items: center;
-  justify-content: flex-start;
-  z-index: 1;
 }
-nav figure:hover{
-  background-color: rgba(147,86,220,0.1);
-  box-shadow: 2px 3px 10px #8b8a8a;
-}
-.icones{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+nav figure:hover{background-color: rgba(147,86,220,0.1);}
+
 .rond{
   width: 23px;
   height: 23px;
   background-color: #9356DC;
   border-radius: 50%;
-  color: white;
   font-size: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
   right: 10px;
   z-index: 10;
 }
@@ -193,15 +190,7 @@ nav figure #mobile{
   margin-right: 30px;
   font-size: 18px;
 }
-
-nav figure #list{
-  font-size: 16px;
-}
-nav figure p{
-  font-family: 'Roboto-Bold';
-  text-align: left;
-  color: black;
-}
+nav figure #list{font-size: 16px;}
 
 /* MAIN */
 
@@ -209,52 +198,29 @@ main{
   background-color: #f6f6f6;
   padding: 15px 0 30px 0;
 }
-section{
-  width: 100%;
-  margin: 0 auto;
-
-}
-#resto{
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
 section figure{
-  width: 100%;
   height: 200px;
   background-color: white;
   border-radius: 15px;
   margin: 15px;
-  position: relative;
-}
-figure:hover {
-  box-shadow: 2px 3px 10px #8b8a8a;
 }
 main figure img{
-  width: 100%;
   height: 120px;
   border-radius: 15px 15px 0 0;
 }
       /* Ajustement des photos */
 
-#resto figure #gout{
-  object-fit: cover;
-  object-position: 0px -40px;
-}
-#resto figure #note{
-  object-fit: cover;
-  object-position: 0px -130px;
-}
-#resto figure #french, #resto figure #sens{
-  object-fit: cover;
-  object-position: 0px -48px;
-}
+#gout, #note, #french, #sens
+{object-fit: cover;}
+
+#resto figure #gout{object-position: 0px -40px;}
+#resto figure #note{object-position: 0px -130px;}
+#resto figure #french, #resto figure #sens{object-position: 0px -48px;}
+
       /* Positionnement de Nouveau */
 
 .new{
   width: 70px;
-  position: absolute;
   right: 5%;
   bottom: 75%;
   color: #008766;
@@ -268,40 +234,27 @@ main figure img{
 
      /* Figcaption */
 
-#resto figure figcaption {
-  width: 100%;
-  height: 50px;
-  position: relative;
-}
-#resto figure figcaption h3{
-  margin: 10px 0 0 15px;
-}
-#resto figure figcaption p{
-  margin: 5px 0 0 15px;
-}
+#resto figure figcaption {height: 50px;}
+#resto figure figcaption h3{margin: 10px 0 0 15px;}
+#resto figure figcaption p{margin: 5px 0 0 15px;}
 
       /* Coeur */
 
 .coeur{
-  position: absolute;
   right: 5%;
   top: 10%;
-  cursor: pointer;
-}
-.coeur i{
-  font-size: 1.5em;
 }
 .vide {
+  margin-top: 10px;
   left: 20px;
   opacity: 1;
   z-index: 20;
+  font-size: 20px;
 }
 .plein{
-  font-size: 1.3em !IMPORTANT;
-  position: absolute;
-  left: 1.5px;
-  top: 3px;
-  background: linear-gradient(#9356DC,50%,#ee91d5);
+  font-size: 22px;
+  top: 9px;
+  left: -1px;
   background-clip: content-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -320,167 +273,140 @@ main figure img{
 footer{
   background-color: #353535;
   padding: 5px 0 20px 20px;
-  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  color: white;
+  justify-content: flex-start;
 }
 footer h4{
-  color: white;
-  font-family: 'Shrikhand';
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: 100;
   margin: 15px 0 10px 0;
 }
-footer i{
-  margin-right: 5px;
-}
-#fork, #hands{margin: 5px;}
-footer #hands .fas{
-  font-size: 10px;
-}
-footer a{
-  font-size: 14px;
-  color: white;
-  margin: 5px;
-}
+footer i{margin-right: 5px;}
+#hands{margin: 5px 0 0 0}
+#hands a{margin:0;}
+#hands i{font-size: 0.9em;}
+footer a{margin: 5px;}
 
 /******* Ajout des BREAKPOINTS page d'Accueil ********/
 
-/*** RESPONSIVE small DESKTOP ***/
+/*** RESPONSIVE TABLET ***/
 
 @media screen and (min-width: 426px) and (max-width: 768px)
 {
-#container{width: 60%;}
-#lieu {padding-right: 5%;}
-nav h2{text-align: center;}
-nav figure{width: 100%;}
-#how{
-  width: 50%;
-  margin: 0 auto;
-}
-#how a{margin: 0 !IMPORTANT;}
-#resto {justify-content: center;}
-figure{flex-basis: 40%;}
+  #container{width: 60%;}
+  #lieu {width: 40%;}
+  #lieu img{left: 18%;}
+  nav h2, section h2{text-align: center;}
+  nav figure{width: 100%;}
+  #how{
+    width: 50%;
+    margin: 0 auto;
+  }
+  #how a{margin: 0 !IMPORTANT;}
+  section h2{padding: 20px 0 !important;}
+  #resto {justify-content: center;}
+  figure{flex-basis: 40%;}
 } 
-/*** RESPONSIVE LARGE DESKTOP ***/
+/*** RESPONSIVE TABLET ***/
 
-@media screen and (min-width: 769px)
+@media screen and (min-width: 768px)
 {
-#container{
-  width: 90% !IMPORTANT;
-  max-width: 1024px;
-}
-  /* TOP */
+  #entreprise, #how, #resto, footer
+  {display: flex;}
 
-#entreprise{
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-#lieu{
-  width: 20%;
-  height: 40px;
-}
-#lieu img{
-  width: 25px;
-  position: relative;
-  left: -50px;
-}
-  /* Fonctionnement */
+  #entreprise, footer{
+    flex-direction: row;
+    justify-content: space-around;}
+  #container{
+    width: 90% !IMPORTANT;
+    max-width: 1024px;
+  }
+  #entreprise{width: 80%;}
+  #lieu{
+    width: 50%;
+    height: 40px;
+  }
+  #lieu img{
+    position: relative;
+    left: -120px;
+    top: 80%;
+  }
+  #reserver{margin-top: 20px;}
+  nav h2, main h2{
+    padding: 1%;
+    font-size: 1.6em;
+    text-align: center !important;
+  }
+  #how{
+    width: 50%;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  #resto{
+    width: 100%;
+    justify-content: center;
+  }
+  #how a{margin: 0 10px;}
 
-h2{
-  padding: 1%;
-  font-size: 1.6em;
-}
-#how {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-#how a{margin: 0 10px;}
+  section h2{padding-bottom: 5% !IMPORTANT;}
+  figure{flex-basis: 40%;}
 
-  /* Restaurants */
-
-section h2{
-  text-align: center;
-  padding-bottom: 2% !IMPORTANT;
+  footer{align-items: center;}
+  footer a{font-size: 1em;}
 }
-#resto{
-  width: 100%;
-  justify-content: center;
-}
-figure{flex-basis: 40%;}
 
-  /* Footer */
+/*** RESPONSIVE DESKTOP ***/
 
-footer{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-footer a{font-size: 1em;}
+@media screen and (min-width: 1024px)
+{
+  #how{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 auto;
+  }
+  #how figure{width: 95% !important;}
 }
 
 /************* CSS pages Menus ***********/
 
-#container{
-  width: 100%;
-}
 /*IMG*/
-#pictop{
-margin: 0;
-}
+
+#pictop{margin: 0;}
 figure #pic{
-  width: 100%;
   max-height: 300px;
   object-fit: cover;
 }
 /* COEUR */
 
-#menuTop{width: 80% !important;}
 #menuTop .coeur{
-  bottom: 15%;
+  top: 20%;
+  right: -10px;
+  font-size: 20px !important;
 }
 #menuTop .plein {
-  left: 21px;
-  top: 20px;
-  font-size: 16.5px !important;
+  left: -1px;
+  top: 9px;
+  font-size: 22px !important;
 }
 
 /* MENU */
 
 #menuTop{
-  width: 90%;
-  display: flex;
   justify-content: space-between;
-  margin-left: 20px;
-  position: relative;
+  margin-left: 20px; 
 }
-#menuTop h1{
-  font-family: 'Shrikhand';
-  font-weight: 500;
-}
-#menuTop i{
-  font-size: 1.2em;
-  position: absolute;
-  top: 35%;
-}
+#menuTop h1{font-weight: 500;}
+
 #mainMenu{
-  width: 100%;
   background-color: #f6f6f6;
   padding: 15px 0 0 0;
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
-  position: relative;
   top: -44px;
 }
-.border{
-  margin-bottom: 60px;
-}
+.border{margin-bottom: 60px;}
+
 section h2{
   padding-bottom: 0;
   margin-bottom: 5px;
@@ -491,19 +417,10 @@ section h2{
   margin-left: 5%;
 }
 .cartouche{
-  width: 90%;
   height: 65px;
-  display: flex;
   margin: 10px 20px;
   background: white;
   border-radius: 12px;
-  overflow: hidden;
-}
-.cartouche:hover{
-  cursor: pointer;
-}
-.plat{
-  width: 80%;
 }
 .text {
   width: 240px;
@@ -514,22 +431,15 @@ section h2{
   width: 60%;
   transition: width 1000ms 0ms linear;
 }
-.plat h3{
-  margin: 10px 0 0 5px;
-  color: black;
-  font-size: 1em;
-}
+.plat h3{margin: 10px 0 0 5px;}
+
 .plat .text p{
   margin: 5px;
   font-size: 0.9em;
 }
-.text h3, .text p{
-  overflow: hidden;
-  white-space: nowrap;
-}
-.avec, .dish{
-  text-overflow: ellipsis;
-}
+.text h3, .text p{white-space: nowrap;}
+.avec, .dish{text-overflow: ellipsis;}
+
 .prix{
   width: 65px;
   height: 65px;
@@ -544,55 +454,29 @@ section h2{
   width: 65px;
   height: 65px;
   background-color: #99e2d0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 0 12px 12px 0;
-  position: absolute;
   right: -23%;
 }
-
 .vert .fas{
   font-size: 1.2em;
   color: rgb(255, 255, 255);
 }
-#bouton{
-  margin: 30px 0 0 0;
-  display: flex;
-  justify-content: center;
-}
-#bouton button{
-  padding: 15px 40px;
-  font-size: 1em;
-}
+#bouton{margin: 30px 0 0 0;}
+#bouton button{padding: 15px 40px;}
 
 /* Animations hover */
 
-.cartouche:hover > .prix {
-  animation: verte 1000ms cubic-bezier(.7,.33,.33,.69) 1 both;
-}
-.cartouche:hover > .vert {
-  animation: verte 1000ms cubic-bezier(.7,.33,.33,.69) 1 both;
-}
-.cartouche:hover > .vert .fas{
-  animation: circle 500ms 300ms ease-in 1 both;
-}
+.cartouche:hover > .prix {animation: verte 1000ms cubic-bezier(.7,.33,.33,.69) 1 both;}
+.cartouche:hover > .vert {animation: verte 1000ms cubic-bezier(.7,.33,.33,.69) 1 both;}
+.cartouche:hover > .vert .fas{animation: circle 500ms 300ms ease-in 1 both;}
 
   @keyframes circle {
-    0%{
-      transform: rotateZ(0);
-    }
-    100% {
-      transform: rotateZ(360deg);
-    }
+    0%{transform: rotateZ(0);}
+    100% {transform: rotateZ(360deg);}
   }
   @keyframes verte {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-65px);
-      }
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-65px);}
   }
   
 /* Animations Menus */
@@ -659,13 +543,10 @@ section h2{
 
 /*** RESPONSIVE small SMARTPHONE ***/
 
-@media screen and (min-width: 321px) and (max-width: 424px)
+@media screen and (min-width: 321px) and (max-width: 375px)
 {
   #menuTop {width: 80% !IMPORTANT;}
-  #menuTop .plein {
-    left: 21px;
-    top: 18px;
-    font-size: 17px !important;}
+
   .text{width: 260px;}
   .prix {
    margin-right: 2% !important;
@@ -677,12 +558,8 @@ section h2{
     animation: vert 1000ms cubic-bezier(.7,.33,.33,.69) 1 both !IMPORTANT;
 }
 @keyframes vert {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-65px);
-    }
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-65px);}
   }
 }
 
@@ -700,83 +577,82 @@ section h2{
 
 /*** RESPONSIVE small TABLET ***/
 
-@media screen and (min-width: 425px) and (max-width: 699px)
+@media screen and (min-width: 425px) and (max-width: 767px)
 {
-  #menuTop .plein{top: 19px !important;}
   .text{width: 300px;}
   .prix {
   margin-left: 5% !IMPORTANT;
   margin-right: 1% !important;
   }
-.vert{right: -18% !IMPORTANT;}
+  .vert{right: -18% !IMPORTANT;}
 }
 
 /*** RESPONSIVE LARGE TABLET ***/
 
-@media screen and (min-width: 700px) and (max-width: 919px)
+@media screen and (min-width: 768px) and (max-width: 1023px)
 {
-.text {
-  width: 450px;
-}
-.text:hover{
-  width: 100%;
-}
-.prix {
-  margin-left: 10% !IMPORTANT;
-  margin-right: 1% !IMPORTANT;
-}
-.vert{right: -10% !IMPORTANT;}
+  #menuTop .coeur{right: -20px !important;}
+  .border{
+    margin: 0 auto;
+    margin-top: -20px;
+    margin-bottom: 60px;
+  }
+  .text {width: 450px;}
+  .text:hover{width: 100%;}
+  .prix {
+    margin-left: 8% !IMPORTANT;
+    margin-right: 1% !IMPORTANT;
+  }
+  .vert{right: -16% !IMPORTANT;}
 }
 
 /*** RESPONSIVE small DESKTOP ***/
 
-@media screen and (min-width: 920px) and (max-width: 1200px)
+@media screen and (min-width: 1024px) and (max-width: 1200px)
 {
-figure #pic{max-height: 400px !IMPORTANT;}
-#menuTop h1{font-size: 2em;}
-
-#menuTop .vide{font-size: 1.5em !important;}
-#menuTop .plein{
-  font-size: 20px !important;
-  left: 22px;
-  top: 26px;}
-section h2{
-  text-align: center;
-  padding-bottom: 2% !IMPORTANT;
-}
-.border{
-  margin: 0 auto !IMPORTANT;
-  width: 60px;
-  margin-bottom: 50px !IMPORTANT;
-}
-.text {
-  width: 450px;
-}
-.text:hover{
-  width: 100%;
-}
-.prix {
-  margin-left: 35% !IMPORTANT;
-  margin-right: 1% !important;
-}
-.vert{right: -8% !IMPORTANT;}
+  figure #pic{max-height: 400px !IMPORTANT;}
+  #menuTop{width: 90% !important;}
+  #menuTop h1{font-size: 2em;}
+  #menuTop .coeur{right: 35px !important;}
+  #menuTop .vide{margin-top: 20px;}
+  #menuTop .plein{
+    left: 0px;
+    top: 20px;}
+  #mainMenu section h2{
+    text-align: center;
+    padding-bottom: 2% !IMPORTANT;
+  }
+  .border{
+    margin: 0 auto !IMPORTANT;
+    width: 60px;
+    margin-bottom: 50px !IMPORTANT;
+  }
+  .text {width: 450px;}
+  .text:hover{width: 100%;}
+  .prix {
+    margin-left: 35% !IMPORTANT;
+    margin-right: 1% !important;
+  }
+  .vert{right: -8% !IMPORTANT;}
 }
 
 /*** RESPONSIVE LARGE DESKTOP ***/
 
-@media screen and (min-width: 1200px)
+@media screen and (min-width: 1440px)
 {
   .border{
   margin: 0 auto;
   width: 60px;
-  margin-bottom: 50px;
+  margin-top: -40px;
+  margin-bottom: 80px;
   }
+  #menuTop{width: 90% !important;}
   #menuTop h1{font-size: 2em;}
-  #menuTop .vide{font-size: 1.5em;}
+  #menuTop .vide{font-size: 22px;}
   #menuTop .plein{
-    font-size: 20px !important;
-    left: 22px;
-    top: 26px;}
+    font-size: 24px !important;
+    left: 0px;
+    top: 9px;}
   #pictop img{max-height: 700px;}
   figure #pic{max-height: 500px;}
 
@@ -784,12 +660,8 @@ section h2{
   width: 95%;
   z-index: -1;
   }
-  .text {
-    width: 450px;
-  }
-  .text:hover{
-    width: 100%;
-  }
+  .text {width: 450px;}
+  .text:hover{width: 100%;}
   .prix {margin-left: 20% !important;}
-  .vert {right: -7%;}
+  .vert {right: -7.5%;}
 }
