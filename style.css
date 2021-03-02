@@ -616,8 +616,9 @@ section h2{
   #menuTop .coeur{right: 35px !important;}
   #menuTop .vide{margin-top: 20px;}
   #menuTop .plein{
-    left: 0px;
-    top: 20px;}
+    left: -1px;
+    top: 18px;
+    font-size: 23px!IMPORTANT;}
   #mainMenu section h2{
     text-align: center;
     padding-bottom: 2% !IMPORTANT;
@@ -651,7 +652,7 @@ section h2{
   #menuTop .vide{font-size: 22px;}
   #menuTop .plein{
     font-size: 24px !important;
-    left: 0px;
+    left: -1px;
     top: 9px;}
   #pictop img{max-height: 700px;}
   figure #pic{max-height: 500px;}
